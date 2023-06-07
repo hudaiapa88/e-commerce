@@ -1,0 +1,16 @@
+package com.uc.ecommerce.service.imp;
+
+import com.uc.ecommerce.model.dto.account.SaveUserRequest;
+import com.uc.ecommerce.model.dto.account.UpdateUserRequest;
+import com.uc.ecommerce.model.dto.account.UserResponse;
+import com.uc.ecommerce.model.entity.account.User;
+
+public interface UserService {
+    UserResponse save(SaveUserRequest saveUserRequest);
+    UserResponse update(Long id, UpdateUserRequest updateUserRequest);
+    void delete(Long id);
+    UserResponse getByUsername(String username);
+    User findByUsername(String username);
+    UserResponse getById(Long id);
+    User findById(Long id);
+}
