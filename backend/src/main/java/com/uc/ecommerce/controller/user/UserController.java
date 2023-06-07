@@ -16,6 +16,6 @@ public class UserController {
 
     @PostMapping
     public UserResponse save(SaveUserRequest saveUserRequest){
-
+          return userService.save(saveUserRequest);
     }
 }
