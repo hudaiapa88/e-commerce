@@ -1,0 +1,3621 @@
+{
+	"info": {
+		"_postman_id": "f5bec183-52e1-4178-918b-5168e265da6b",
+		"name": "E-commerce Rest Api",
+		"description": "Contact Support:\n Name: E-commerce\n Email: info@ecommerce.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23538868"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "Gets current User Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/account",
+						"description": "Returns current user information, return 401 if not authenticated"
+					},
+					"response": [
+						{
+							"name": "current user information",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": "{{baseUrl}}/account"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "not authenticated",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": "{{baseUrl}}/account"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "active User 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/account/active/:id?code=quis ipsum dolor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"active",
+								":id"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "quis ipsum dolor",
+									"description": "(Required) "
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "-33185061",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/account/active/:id?code=quis ipsum dolor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"active",
+										":id"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "quis ipsum dolor"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Logs User into the System",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"password\": \"veniam incididun\",\n  \"username\": \"mollit\",\n  \"rememberMe\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/account/login",
+						"description": "a successful login"
+					},
+					"response": [
+						{
+							"name": "Successfully login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"veniam incididun\",\n  \"username\": \"mollit\",\n  \"rememberMe\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/account/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not authenticated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"veniam incididun\",\n  \"username\": \"mollit\",\n  \"rememberMe\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/account/login"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Access to the relevant resource is prohibited",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"veniam incididun\",\n  \"username\": \"mollit\",\n  \"rememberMe\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/account/login"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"veniam incididun\",\n  \"username\": \"mollit\",\n  \"rememberMe\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/account/login"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/account/logout"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": "{{baseUrl}}/account/logout"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "parent",
+					"item": [
+						{
+							"name": "{parentId}",
+							"item": [
+								{
+									"name": "get By Parent Id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/category/parent/:parentId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"category",
+												"parent",
+												":parentId"
+											],
+											"variable": [
+												{
+													"key": "parentId",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/category/parent/:parentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"category",
+														"parent",
+														":parentId"
+													],
+													"variable": [
+														{
+															"key": "parentId",
+															"value": "-33185061",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": 74789216,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"cillum consequat\"\n  },\n  {\n    \"id\": 15222838,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"esse Lorem do\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "save Sub Category",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"voluptate ea sint\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/category/parent/:parentId/sub",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"category",
+												"parent",
+												":parentId",
+												"sub"
+											],
+											"variable": [
+												{
+													"key": "parentId",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"voluptate ea sint\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/category/parent/:parentId/sub",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"category",
+														"parent",
+														":parentId",
+														"sub"
+													],
+													"variable": [
+														{
+															"key": "parentId",
+															"value": "-33185061",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": -33947506,\n  \"parent\": {\n    \"id\": 52439603,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"fugiat adipisicing\"\n  },\n  \"title\": \"eiusmod exercitation dolor adipisicing\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get All Parent",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/category/parent"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": "{{baseUrl}}/category/parent"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": 74789216,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"cillum consequat\"\n  },\n  {\n    \"id\": 15222838,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"esse Lorem do\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "save Parent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"voluptate ea sint\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/category/parent"
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"voluptate ea sint\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/category/parent"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -33947506,\n  \"parent\": {\n    \"id\": 52439603,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"fugiat adipisicing\"\n  },\n  \"title\": \"eiusmod exercitation dolor adipisicing\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "delete 4",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/category/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/category/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"category",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "update 4",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"voluptate ea sint\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/category/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"category",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"voluptate ea sint\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/category/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"category",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -33947506,\n  \"parent\": {\n    \"id\": 52439603,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"fugiat adipisicing\"\n  },\n  \"title\": \"eiusmod exercitation dolor adipisicing\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All 7",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/category"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/category"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 74789216,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"cillum consequat\"\n  },\n  {\n    \"id\": 15222838,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"esse Lorem do\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "credit-card",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "delete 3",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/credit-card/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"credit-card",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/credit-card/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"credit-card",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "get By Id 4",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/credit-card/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"credit-card",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/credit-card/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"credit-card",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"createdDateTime\": \"1947-04-08T03:39:47.185Z\",\n  \"cvv2\": \"id ex labore mollit et\",\n  \"date\": \"velit nostrud exercitation dolore\",\n  \"id\": -40087650,\n  \"no\": \"fugiat occaecat elit inc\",\n  \"updatedDateTime\": \"1984-07-10T16:00:13.820Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update 3",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cvv2\": \"195\",\n  \"date\": \"do\",\n  \"no\": \"adipisicing qui sed in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/credit-card/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"credit-card",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"cvv2\": \"195\",\n  \"date\": \"do\",\n  \"no\": \"adipisicing qui sed in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/credit-card/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"credit-card",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"createdDateTime\": \"1947-04-08T03:39:47.185Z\",\n  \"cvv2\": \"id ex labore mollit et\",\n  \"date\": \"velit nostrud exercitation dolore\",\n  \"id\": -40087650,\n  \"no\": \"fugiat occaecat elit inc\",\n  \"updatedDateTime\": \"1984-07-10T16:00:13.820Z\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get My",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/credit-card/my"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/credit-card/my"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"createdDateTime\": \"1981-10-19T07:49:22.626Z\",\n    \"cvv2\": \"est aliquip\",\n    \"date\": \"non irure commodo\",\n    \"id\": -9332798,\n    \"no\": \"amet\",\n    \"updatedDateTime\": \"1965-12-24T03:15:05.563Z\"\n  },\n  {\n    \"createdDateTime\": \"2007-06-28T23:04:18.978Z\",\n    \"cvv2\": \"consequat id esse\",\n    \"date\": \"culpa nulla elit ex\",\n    \"id\": 784440,\n    \"no\": \"ullamco quis sunt\",\n    \"updatedDateTime\": \"2013-10-27T03:34:44.387Z\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cvv2\": \"195\",\n  \"date\": \"do\",\n  \"no\": \"adipisicing qui sed in\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/credit-card/user/my"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cvv2\": \"195\",\n  \"date\": \"do\",\n  \"no\": \"adipisicing qui sed in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/credit-card/user/my"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"createdDateTime\": \"1947-04-08T03:39:47.185Z\",\n  \"cvv2\": \"id ex labore mollit et\",\n  \"date\": \"velit nostrud exercitation dolore\",\n  \"id\": -40087650,\n  \"no\": \"fugiat occaecat elit inc\",\n  \"updatedDateTime\": \"1984-07-10T16:00:13.820Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "delete 1",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/order/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"address\": {\n    \"district\": \"id co\",\n    \"province\": \"voluptate irure\",\n    \"buildingInformation\": \"aliquip\",\n    \"country\": \"Ut enim nostrud\",\n    \"fullAddress\": \"cupidatat in deserunt ea\",\n    \"neighborhood\": \"labore commodo minim et\",\n    \"street\": \"commodo e\"\n  },\n  \"createdDateTime\": \"1975-11-15T07:54:54.591Z\",\n  \"id\": 63210321,\n  \"orderLines\": [\n    {\n      \"id\": 56350195,\n      \"product\": {\n        \"category\": {\n          \"id\": 99324372,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"nisi Excepteur\"\n        },\n        \"createdDateTime\": \"2004-08-30T06:17:30.072Z\",\n        \"id\": -32515905,\n        \"price\": -55427775.34269434,\n        \"quantity\": -46236135,\n        \"title\": \"aliqua minim ex ad\",\n        \"updatedDateTime\": \"1999-10-14T09:44:34.480Z\"\n      },\n      \"quantity\": -18862069,\n      \"totalPrice\": 38091640.15914139\n    },\n    {\n      \"id\": 80463288,\n      \"product\": {\n        \"category\": {\n          \"id\": 93279655,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"cupidatat occaecat magna aliquip\"\n        },\n        \"createdDateTime\": \"1986-08-19T07:43:37.908Z\",\n        \"id\": 81832620,\n        \"price\": 45656061.86621499,\n        \"quantity\": -21374664,\n        \"title\": \"fugiat\",\n        \"updatedDateTime\": \"1982-11-24T17:53:27.585Z\"\n      },\n      \"quantity\": 6710149,\n      \"totalPrice\": -45723418.57961031\n    }\n  ],\n  \"totalPrice\": -42110456.379775755,\n  \"updatedDateTime\": \"1978-01-29T08:40:27.572Z\",\n  \"user\": {\n    \"address\": {\n      \"district\": \"exercitation\",\n      \"province\": \"elit reprehenderit veniam\",\n      \"buildingInformation\": \"ullamco qui\",\n      \"country\": \"enim des\",\n      \"fullAddress\": \"Excepteur sint\",\n      \"neighborhood\": \"anim\",\n      \"street\": \"id est elit ullamco fugiat\"\n    },\n    \"createdDateTime\": \"1953-01-08T04:56:56.414Z\",\n    \"email\": \"fugiat Lorem\",\n    \"firstName\": \"aute consequat tempor \",\n    \"id\": -59496615,\n    \"isActive\": false,\n    \"lastName\": \"laborum cillum\",\n    \"phone\": {\n      \"areaCode\": \"4468\",\n      \"number\": \"0792\",\n      \"countryCode\": \"sed id\"\n    },\n    \"title\": \"mollit\",\n    \"updatedDateTime\": \"1991-03-19T21:20:33.192Z\",\n    \"username\": \"officia cupidatat occaecat\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "get By Id 2",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/order/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"address\": {\n    \"district\": \"id co\",\n    \"province\": \"voluptate irure\",\n    \"buildingInformation\": \"aliquip\",\n    \"country\": \"Ut enim nostrud\",\n    \"fullAddress\": \"cupidatat in deserunt ea\",\n    \"neighborhood\": \"labore commodo minim et\",\n    \"street\": \"commodo e\"\n  },\n  \"createdDateTime\": \"1975-11-15T07:54:54.591Z\",\n  \"id\": 63210321,\n  \"orderLines\": [\n    {\n      \"id\": 56350195,\n      \"product\": {\n        \"category\": {\n          \"id\": 99324372,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"nisi Excepteur\"\n        },\n        \"createdDateTime\": \"2004-08-30T06:17:30.072Z\",\n        \"id\": -32515905,\n        \"price\": -55427775.34269434,\n        \"quantity\": -46236135,\n        \"title\": \"aliqua minim ex ad\",\n        \"updatedDateTime\": \"1999-10-14T09:44:34.480Z\"\n      },\n      \"quantity\": -18862069,\n      \"totalPrice\": 38091640.15914139\n    },\n    {\n      \"id\": 80463288,\n      \"product\": {\n        \"category\": {\n          \"id\": 93279655,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"cupidatat occaecat magna aliquip\"\n        },\n        \"createdDateTime\": \"1986-08-19T07:43:37.908Z\",\n        \"id\": 81832620,\n        \"price\": 45656061.86621499,\n        \"quantity\": -21374664,\n        \"title\": \"fugiat\",\n        \"updatedDateTime\": \"1982-11-24T17:53:27.585Z\"\n      },\n      \"quantity\": 6710149,\n      \"totalPrice\": -45723418.57961031\n    }\n  ],\n  \"totalPrice\": -42110456.379775755,\n  \"updatedDateTime\": \"1978-01-29T08:40:27.572Z\",\n  \"user\": {\n    \"address\": {\n      \"district\": \"exercitation\",\n      \"province\": \"elit reprehenderit veniam\",\n      \"buildingInformation\": \"ullamco qui\",\n      \"country\": \"enim des\",\n      \"fullAddress\": \"Excepteur sint\",\n      \"neighborhood\": \"anim\",\n      \"street\": \"id est elit ullamco fugiat\"\n    },\n    \"createdDateTime\": \"1953-01-08T04:56:56.414Z\",\n    \"email\": \"fugiat Lorem\",\n    \"firstName\": \"aute consequat tempor \",\n    \"id\": -59496615,\n    \"isActive\": false,\n    \"lastName\": \"laborum cillum\",\n    \"phone\": {\n      \"areaCode\": \"4468\",\n      \"number\": \"0792\",\n      \"countryCode\": \"sed id\"\n    },\n    \"title\": \"mollit\",\n    \"updatedDateTime\": \"1991-03-19T21:20:33.192Z\",\n    \"username\": \"officia cupidatat occaecat\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "update 1",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/order/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/order/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"address\": {\n    \"district\": \"id co\",\n    \"province\": \"voluptate irure\",\n    \"buildingInformation\": \"aliquip\",\n    \"country\": \"Ut enim nostrud\",\n    \"fullAddress\": \"cupidatat in deserunt ea\",\n    \"neighborhood\": \"labore commodo minim et\",\n    \"street\": \"commodo e\"\n  },\n  \"createdDateTime\": \"1975-11-15T07:54:54.591Z\",\n  \"id\": 63210321,\n  \"orderLines\": [\n    {\n      \"id\": 56350195,\n      \"product\": {\n        \"category\": {\n          \"id\": 99324372,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"nisi Excepteur\"\n        },\n        \"createdDateTime\": \"2004-08-30T06:17:30.072Z\",\n        \"id\": -32515905,\n        \"price\": -55427775.34269434,\n        \"quantity\": -46236135,\n        \"title\": \"aliqua minim ex ad\",\n        \"updatedDateTime\": \"1999-10-14T09:44:34.480Z\"\n      },\n      \"quantity\": -18862069,\n      \"totalPrice\": 38091640.15914139\n    },\n    {\n      \"id\": 80463288,\n      \"product\": {\n        \"category\": {\n          \"id\": 93279655,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"cupidatat occaecat magna aliquip\"\n        },\n        \"createdDateTime\": \"1986-08-19T07:43:37.908Z\",\n        \"id\": 81832620,\n        \"price\": 45656061.86621499,\n        \"quantity\": -21374664,\n        \"title\": \"fugiat\",\n        \"updatedDateTime\": \"1982-11-24T17:53:27.585Z\"\n      },\n      \"quantity\": 6710149,\n      \"totalPrice\": -45723418.57961031\n    }\n  ],\n  \"totalPrice\": -42110456.379775755,\n  \"updatedDateTime\": \"1978-01-29T08:40:27.572Z\",\n  \"user\": {\n    \"address\": {\n      \"district\": \"exercitation\",\n      \"province\": \"elit reprehenderit veniam\",\n      \"buildingInformation\": \"ullamco qui\",\n      \"country\": \"enim des\",\n      \"fullAddress\": \"Excepteur sint\",\n      \"neighborhood\": \"anim\",\n      \"street\": \"id est elit ullamco fugiat\"\n    },\n    \"createdDateTime\": \"1953-01-08T04:56:56.414Z\",\n    \"email\": \"fugiat Lorem\",\n    \"firstName\": \"aute consequat tempor \",\n    \"id\": -59496615,\n    \"isActive\": false,\n    \"lastName\": \"laborum cillum\",\n    \"phone\": {\n      \"areaCode\": \"4468\",\n      \"number\": \"0792\",\n      \"countryCode\": \"sed id\"\n    },\n    \"title\": \"mollit\",\n    \"updatedDateTime\": \"1991-03-19T21:20:33.192Z\",\n    \"username\": \"officia cupidatat occaecat\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "order Ship It",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order/:id/ship-it",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order",
+										":id",
+										"ship-it"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/order/:id/ship-it",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order",
+												":id",
+												"ship-it"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"address\": {\n    \"district\": \"id co\",\n    \"province\": \"voluptate irure\",\n    \"buildingInformation\": \"aliquip\",\n    \"country\": \"Ut enim nostrud\",\n    \"fullAddress\": \"cupidatat in deserunt ea\",\n    \"neighborhood\": \"labore commodo minim et\",\n    \"street\": \"commodo e\"\n  },\n  \"createdDateTime\": \"1975-11-15T07:54:54.591Z\",\n  \"id\": 63210321,\n  \"orderLines\": [\n    {\n      \"id\": 56350195,\n      \"product\": {\n        \"category\": {\n          \"id\": 99324372,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"nisi Excepteur\"\n        },\n        \"createdDateTime\": \"2004-08-30T06:17:30.072Z\",\n        \"id\": -32515905,\n        \"price\": -55427775.34269434,\n        \"quantity\": -46236135,\n        \"title\": \"aliqua minim ex ad\",\n        \"updatedDateTime\": \"1999-10-14T09:44:34.480Z\"\n      },\n      \"quantity\": -18862069,\n      \"totalPrice\": 38091640.15914139\n    },\n    {\n      \"id\": 80463288,\n      \"product\": {\n        \"category\": {\n          \"id\": 93279655,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"cupidatat occaecat magna aliquip\"\n        },\n        \"createdDateTime\": \"1986-08-19T07:43:37.908Z\",\n        \"id\": 81832620,\n        \"price\": 45656061.86621499,\n        \"quantity\": -21374664,\n        \"title\": \"fugiat\",\n        \"updatedDateTime\": \"1982-11-24T17:53:27.585Z\"\n      },\n      \"quantity\": 6710149,\n      \"totalPrice\": -45723418.57961031\n    }\n  ],\n  \"totalPrice\": -42110456.379775755,\n  \"updatedDateTime\": \"1978-01-29T08:40:27.572Z\",\n  \"user\": {\n    \"address\": {\n      \"district\": \"exercitation\",\n      \"province\": \"elit reprehenderit veniam\",\n      \"buildingInformation\": \"ullamco qui\",\n      \"country\": \"enim des\",\n      \"fullAddress\": \"Excepteur sint\",\n      \"neighborhood\": \"anim\",\n      \"street\": \"id est elit ullamco fugiat\"\n    },\n    \"createdDateTime\": \"1953-01-08T04:56:56.414Z\",\n    \"email\": \"fugiat Lorem\",\n    \"firstName\": \"aute consequat tempor \",\n    \"id\": -59496615,\n    \"isActive\": false,\n    \"lastName\": \"laborum cillum\",\n    \"phone\": {\n      \"areaCode\": \"4468\",\n      \"number\": \"0792\",\n      \"countryCode\": \"sed id\"\n    },\n    \"title\": \"mollit\",\n    \"updatedDateTime\": \"1991-03-19T21:20:33.192Z\",\n    \"username\": \"officia cupidatat occaecat\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All 3",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/order"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/order"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"address\": {\n      \"district\": \"qui do\",\n      \"province\": \"nostrud Duis tempor dolore\",\n      \"buildingInformation\": \"Ut sint quis elit\",\n      \"country\": \"eu ut\",\n      \"fullAddress\": \"quis ut incididunt\",\n      \"neighborhood\": \"laboris aliquip ut minim\",\n      \"street\": \"labore nulla\"\n    },\n    \"createdDateTime\": \"1948-09-15T01:25:02.263Z\",\n    \"id\": -76301274,\n    \"orderLines\": [\n      {\n        \"id\": -74094341,\n        \"product\": {\n          \"category\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"createdDateTime\": \"1989-03-24T12:20:57.463Z\",\n          \"id\": 70545312,\n          \"price\": 76050870.54977903,\n          \"quantity\": 25834048,\n          \"title\": \"nulla\",\n          \"updatedDateTime\": \"1948-01-17T06:16:27.693Z\"\n        },\n        \"quantity\": 8241945,\n        \"totalPrice\": -74833992.51241942\n      },\n      {\n        \"id\": 11134935,\n        \"product\": {\n          \"category\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"createdDateTime\": \"1957-06-02T14:37:04.314Z\",\n          \"id\": -13033162,\n          \"price\": 50182018.79216111,\n          \"quantity\": -6635117,\n          \"title\": \"sint sunt aute amet in\",\n          \"updatedDateTime\": \"1951-11-24T00:50:19.090Z\"\n        },\n        \"quantity\": 16960993,\n        \"totalPrice\": 3918821.1311223805\n      }\n    ],\n    \"totalPrice\": 35626695.98590863,\n    \"updatedDateTime\": \"1960-10-20T15:59:50.331Z\",\n    \"user\": {\n      \"address\": {\n        \"district\": \"ut\",\n        \"province\": \"in irure dolore\",\n        \"buildingInformation\": \"voluptate Ut ut\",\n        \"country\": \"deserunt in dolore\",\n        \"fullAddress\": \"in cillum\",\n        \"neighborhood\": \"adipisicing dolor cillum ex ipsum\",\n        \"street\": \"ex cupidatat\"\n      },\n      \"createdDateTime\": \"2021-11-20T09:27:15.508Z\",\n      \"email\": \"sed aliquip\",\n      \"firstName\": \"cupidatat exercitation\",\n      \"id\": 10780610,\n      \"isActive\": true,\n      \"lastName\": \"Ut tempor mollit\",\n      \"phone\": {\n        \"areaCode\": \"32439\",\n        \"number\": \"63203181\",\n        \"countryCode\": \"dolor commodo ipsum\"\n      },\n      \"title\": \"sint et dolor\",\n      \"updatedDateTime\": \"1947-11-10T20:11:14.973Z\",\n      \"username\": \"fugiat Lorem\"\n    }\n  },\n  {\n    \"address\": {\n      \"district\": \"dolore ex\",\n      \"province\": \"id cupidatat qui\",\n      \"buildingInformation\": \"nisi incididunt ipsum sint sunt\",\n      \"country\": \"dolor in\",\n      \"fullAddress\": \"in velit\",\n      \"neighborhood\": \"ut dolor quis minim\",\n      \"street\": \"occaecat dol\"\n    },\n    \"createdDateTime\": \"1986-04-23T09:45:31.451Z\",\n    \"id\": 80463619,\n    \"orderLines\": [\n      {\n        \"id\": 77592946,\n        \"product\": {\n          \"category\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"createdDateTime\": \"1967-02-27T17:57:19.136Z\",\n          \"id\": -7952178,\n          \"price\": 5834460.142969981,\n          \"quantity\": 48120985,\n          \"title\": \"Duis\",\n          \"updatedDateTime\": \"1950-08-09T20:57:05.519Z\"\n        },\n        \"quantity\": -64336396,\n        \"totalPrice\": -437596.91499248147\n      },\n      {\n        \"id\": -51827211,\n        \"product\": {\n          \"category\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"createdDateTime\": \"1971-06-22T01:59:34.060Z\",\n          \"id\": 76919585,\n          \"price\": 91910134.99488229,\n          \"quantity\": -68617935,\n          \"title\": \"ad magna tempor qui adipisicing\",\n          \"updatedDateTime\": \"1956-12-31T17:14:58.822Z\"\n        },\n        \"quantity\": -33288105,\n        \"totalPrice\": -321696.22710585594\n      }\n    ],\n    \"totalPrice\": -11642055.794858798,\n    \"updatedDateTime\": \"1957-08-22T18:00:36.960Z\",\n    \"user\": {\n      \"address\": {\n        \"district\": \"in proident\",\n        \"province\": \"veniam\",\n        \"buildingInformation\": \"enim proident mollit fugiat\",\n        \"country\": \"eu sed labore ut\",\n        \"fullAddress\": \"n\",\n        \"neighborhood\": \"anim occaecat enim aliqua ullamco\",\n        \"street\": \"ut Duis dolor\"\n      },\n      \"createdDateTime\": \"1996-05-22T08:18:33.802Z\",\n      \"email\": \"labor\",\n      \"firstName\": \"nisi qui minim\",\n      \"id\": -74027428,\n      \"isActive\": false,\n      \"lastName\": \"officia est laborum\",\n      \"phone\": {\n        \"areaCode\": \"3879\",\n        \"number\": \"056\",\n        \"countryCode\": \"in sit Duis\"\n      },\n      \"title\": \"ullamco fugiat\",\n      \"updatedDateTime\": \"1943-12-01T10:19:07.377Z\",\n      \"username\": \"esse officia\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"address\": {\n    \"district\": \"voluptate\",\n    \"province\": \"dolor qui\",\n    \"buildingInformation\": \"commodo sint ad dolor\",\n    \"country\": \"exerc\",\n    \"fullAddress\": \"consectetur dolore\",\n    \"neighborhood\": \"sunt irure qui\",\n    \"street\": \"Excepteur mollit eu dolor\"\n  },\n  \"orderLines\": [\n    {\n      \"quantity\": 46346376,\n      \"productId\": 73661105\n    },\n    {\n      \"quantity\": -48733822,\n      \"productId\": -60730199\n    }\n  ],\n  \"saveCreditCardRequest\": {\n    \"cvv2\": \"096\",\n    \"date\": \"qui\",\n    \"no\": \"fugiat ut\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/order?isSaveCard=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "isSaveCard",
+									"value": "true",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address\": {\n    \"district\": \"minim exercitation nostrud eu laboris\",\n    \"province\": \"commodo dolore eiusmod aliqua esse\",\n    \"buildingInformation\": \"laboris nostrud incididunt\",\n    \"country\": \"ullamco incididunt consequat in\",\n    \"fullAddress\": \"Excepteur Ut deserunt aliquip\",\n    \"neighborhood\": \"Excepteur nisi\",\n    \"street\": \"\"\n  },\n  \"orderLines\": [\n    {\n      \"quantity\": -33880436,\n      \"productId\": -13014160\n    },\n    {\n      \"quantity\": 24452478,\n      \"productId\": -2943163\n    }\n  ],\n  \"saveCreditCardRequest\": {\n    \"cvv2\": \"   \",\n    \"date\": \"dolore sit incididunt cupidatat\",\n    \"no\": \"anim labore\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/order?isSaveCard=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order"
+									],
+									"query": [
+										{
+											"key": "isSaveCard",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"address\": {\n    \"district\": \"id co\",\n    \"province\": \"voluptate irure\",\n    \"buildingInformation\": \"aliquip\",\n    \"country\": \"Ut enim nostrud\",\n    \"fullAddress\": \"cupidatat in deserunt ea\",\n    \"neighborhood\": \"labore commodo minim et\",\n    \"street\": \"commodo e\"\n  },\n  \"createdDateTime\": \"1975-11-15T07:54:54.591Z\",\n  \"id\": 63210321,\n  \"orderLines\": [\n    {\n      \"id\": 56350195,\n      \"product\": {\n        \"category\": {\n          \"id\": 99324372,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"nisi Excepteur\"\n        },\n        \"createdDateTime\": \"2004-08-30T06:17:30.072Z\",\n        \"id\": -32515905,\n        \"price\": -55427775.34269434,\n        \"quantity\": -46236135,\n        \"title\": \"aliqua minim ex ad\",\n        \"updatedDateTime\": \"1999-10-14T09:44:34.480Z\"\n      },\n      \"quantity\": -18862069,\n      \"totalPrice\": 38091640.15914139\n    },\n    {\n      \"id\": 80463288,\n      \"product\": {\n        \"category\": {\n          \"id\": 93279655,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"cupidatat occaecat magna aliquip\"\n        },\n        \"createdDateTime\": \"1986-08-19T07:43:37.908Z\",\n        \"id\": 81832620,\n        \"price\": 45656061.86621499,\n        \"quantity\": -21374664,\n        \"title\": \"fugiat\",\n        \"updatedDateTime\": \"1982-11-24T17:53:27.585Z\"\n      },\n      \"quantity\": 6710149,\n      \"totalPrice\": -45723418.57961031\n    }\n  ],\n  \"totalPrice\": -42110456.379775755,\n  \"updatedDateTime\": \"1978-01-29T08:40:27.572Z\",\n  \"user\": {\n    \"address\": {\n      \"district\": \"exercitation\",\n      \"province\": \"elit reprehenderit veniam\",\n      \"buildingInformation\": \"ullamco qui\",\n      \"country\": \"enim des\",\n      \"fullAddress\": \"Excepteur sint\",\n      \"neighborhood\": \"anim\",\n      \"street\": \"id est elit ullamco fugiat\"\n    },\n    \"createdDateTime\": \"1953-01-08T04:56:56.414Z\",\n    \"email\": \"fugiat Lorem\",\n    \"firstName\": \"aute consequat tempor \",\n    \"id\": -59496615,\n    \"isActive\": false,\n    \"lastName\": \"laborum cillum\",\n    \"phone\": {\n      \"areaCode\": \"4468\",\n      \"number\": \"0792\",\n      \"countryCode\": \"sed id\"\n    },\n    \"title\": \"mollit\",\n    \"updatedDateTime\": \"1991-03-19T21:20:33.192Z\",\n    \"username\": \"officia cupidatat occaecat\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "get All 4",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/order/pageable?page=77770141&size=66831577&sort=[\"aliquip non nisi dolore sed\",\"qui exercitation\"]",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"pageable"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "77770141",
+									"description": "(Required) "
+								},
+								{
+									"key": "size",
+									"value": "66831577",
+									"description": "(Required) "
+								},
+								{
+									"key": "sort",
+									"value": "[\"aliquip non nisi dolore sed\",\"qui exercitation\"]",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order/pageable?page=<integer>&size=<integer>&sort=<string>,<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order",
+										"pageable"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "<integer>"
+										},
+										{
+											"key": "sort",
+											"value": "<string>,<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"content\": [\n    {\n      \"address\": {\n        \"district\": \"sed sit tempor\",\n        \"province\": \"anim qui irure\",\n        \"buildingInformation\": \"cillum\",\n        \"country\": \"nostrud cillum Lorem\",\n        \"fullAddress\": \"in sint deserunt nostrud\",\n        \"neighborhood\": \"Excepteur elit\",\n        \"street\": \"mollit ea qui adi\"\n      },\n      \"createdDateTime\": \"2004-06-26T19:29:40.236Z\",\n      \"id\": 65604541,\n      \"orderLines\": [\n        {\n          \"id\": 27814006,\n          \"product\": {\n            \"category\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"createdDateTime\": \"1953-03-19T20:03:03.203Z\",\n            \"id\": 91327232,\n            \"price\": 92574590.30149832,\n            \"quantity\": -42342264,\n            \"title\": \"ea aliquip minim dolor laborum\",\n            \"updatedDateTime\": \"1965-10-09T15:00:29.759Z\"\n          },\n          \"quantity\": -82140742,\n          \"totalPrice\": -71587563.63890402\n        },\n        {\n          \"id\": 78454394,\n          \"product\": {\n            \"category\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"createdDateTime\": \"1948-12-11T07:20:45.707Z\",\n            \"id\": -47059861,\n            \"price\": 3918769.475284785,\n            \"quantity\": -79827875,\n            \"title\": \"enim commodo non\",\n            \"updatedDateTime\": \"1982-11-06T16:22:08.653Z\"\n          },\n          \"quantity\": -68043286,\n          \"totalPrice\": -52562545.98757475\n        }\n      ],\n      \"totalPrice\": 85207535.45246845,\n      \"updatedDateTime\": \"1976-09-16T03:26:03.364Z\",\n      \"user\": {\n        \"address\": {\n          \"district\": \"cupidatat non\",\n          \"province\": \"esse\",\n          \"buildingInformation\": \"cupidatat ex\",\n          \"country\": \"tempor sed exercitation commodo\",\n          \"fullAddress\": \"\",\n          \"neighborhood\": \"Lorem dolor cillum\",\n          \"street\": \"velit aliquip sit labore dolor\"\n        },\n        \"createdDateTime\": \"1948-05-19T21:43:20.580Z\",\n        \"email\": \"magna id\",\n        \"firstName\": \"ad pariatur laborum cillum Ut\",\n        \"id\": -47692587,\n        \"isActive\": false,\n        \"lastName\": \"dolor officia occaecat labore proident\",\n        \"phone\": {\n          \"areaCode\": \"12667\",\n          \"number\": \"63798127\",\n          \"countryCode\": \"dolor labore\"\n        },\n        \"title\": \"elit aut\",\n        \"updatedDateTime\": \"1969-07-16T05:58:42.538Z\",\n        \"username\": \"labore\"\n      }\n    },\n    {\n      \"address\": {\n        \"district\": \"cupidatat nisi nostrud\",\n        \"province\": \"Lorem Excepteur\",\n        \"buildingInformation\": \"ex incididunt\",\n        \"country\": \"sed ut consequat do\",\n        \"fullAddress\": \"in\",\n        \"neighborhood\": \"est Excepteur\",\n        \"street\": \"Excepteur dolor ex deserunt\"\n      },\n      \"createdDateTime\": \"1964-08-11T20:20:43.860Z\",\n      \"id\": -46043481,\n      \"orderLines\": [\n        {\n          \"id\": -94607783,\n          \"product\": {\n            \"category\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"createdDateTime\": \"1977-06-20T04:08:59.475Z\",\n            \"id\": 33577241,\n            \"price\": 53160175.92208862,\n            \"quantity\": -89576515,\n            \"title\": \"id occaecat laborum\",\n            \"updatedDateTime\": \"1999-07-24T02:31:19.946Z\"\n          },\n          \"quantity\": -79497865,\n          \"totalPrice\": 74010172.51664323\n        },\n        {\n          \"id\": -40719221,\n          \"product\": {\n            \"category\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"createdDateTime\": \"2011-03-13T04:33:29.802Z\",\n            \"id\": 82219381,\n            \"price\": 95161812.59490323,\n            \"quantity\": 95662195,\n            \"title\": \"velit nostrud\",\n            \"updatedDateTime\": \"2003-02-26T20:45:43.286Z\"\n          },\n          \"quantity\": 93303782,\n          \"totalPrice\": 95424205.3817668\n        }\n      ],\n      \"totalPrice\": -85162144.1119712,\n      \"updatedDateTime\": \"1966-07-02T00:22:15.458Z\",\n      \"user\": {\n        \"address\": {\n          \"district\": \"Duis sunt\",\n          \"province\": \"esse eiusmod ut cillum\",\n          \"buildingInformation\": \"dolor incididunt labore\",\n          \"country\": \"mollit nulla aliqua quis\",\n          \"fullAddress\": \"ea dolore ullamco\",\n          \"neighborhood\": \"commodo cillum\",\n          \"street\": \"non elit ut\"\n        },\n        \"createdDateTime\": \"1974-07-05T00:09:16.546Z\",\n        \"email\": \"officia dolor\",\n        \"firstName\": \"dolore amet exercitation\",\n        \"id\": -70649187,\n        \"isActive\": false,\n        \"lastName\": \"occaecat officia\",\n        \"phone\": {\n          \"areaCode\": \"485\",\n          \"number\": \"00\",\n          \"countryCode\": \"in dolore proident voluptate nisi\"\n        },\n        \"title\": \"fugiat est irure Duis\",\n        \"updatedDateTime\": \"1997-10-30T01:50:30.717Z\",\n        \"username\": \"aute mollit\"\n      }\n    }\n  ],\n  \"empty\": true,\n  \"first\": false,\n  \"last\": false,\n  \"number\": 62502025,\n  \"numberOfElements\": 87234145,\n  \"pageable\": {\n    \"offset\": 2698809,\n    \"pageNumber\": -84362931,\n    \"pageSize\": 46035983,\n    \"paged\": true,\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": true,\n      \"unsorted\": true\n    },\n    \"unpaged\": true\n  },\n  \"size\": -89295266,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"totalElements\": -99943132,\n  \"totalPages\": -52139193\n}"
+						}
+					]
+				},
+				{
+					"name": "get By User Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/order/user/my"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/order/user/my"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"address\": {\n      \"district\": \"aute laborum amet\",\n      \"province\": \"sint in\",\n      \"buildingInformation\": \"sint adipisicing proi\",\n      \"country\": \"amet qui esse\",\n      \"fullAddress\": \"enim laboris\",\n      \"neighborhood\": \"in proident Excepteur\",\n      \"street\": \"enim in quis\"\n    },\n    \"createdDateTime\": \"2014-08-10T17:35:53.707Z\",\n    \"id\": 39450715,\n    \"orderLines\": [\n      {\n        \"id\": -90026927,\n        \"product\": {\n          \"category\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"createdDateTime\": \"1987-04-09T01:48:27.589Z\",\n          \"id\": 65188805,\n          \"price\": -14028505.91377835,\n          \"quantity\": 59531235,\n          \"title\": \"sed veniam eu irure\",\n          \"updatedDateTime\": \"1978-01-01T12:21:18.445Z\"\n        },\n        \"quantity\": -14976746,\n        \"totalPrice\": -77095052.84739485\n      },\n      {\n        \"id\": 42458222,\n        \"product\": {\n          \"category\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"createdDateTime\": \"1972-08-24T15:21:00.226Z\",\n          \"id\": -78655094,\n          \"price\": 53015493.32800391,\n          \"quantity\": 60754119,\n          \"title\": \"cupidatat sit Ut in\",\n          \"updatedDateTime\": \"1999-01-06T18:36:53.321Z\"\n        },\n        \"quantity\": -9374953,\n        \"totalPrice\": 63446058.42920396\n      }\n    ],\n    \"totalPrice\": -8853384.693453804,\n    \"updatedDateTime\": \"2021-06-28T20:37:29.072Z\",\n    \"user\": {\n      \"address\": {\n        \"district\": \"Excepteur velit eiusmod enim\",\n        \"province\": \"est consequat sint\",\n        \"buildingInformation\": \"aliqua eu cillum laboris in\",\n        \"country\": \"ullamco Duis cillum esse\",\n        \"fullAddress\": \"mollit Lorem deserunt\",\n        \"neighborhood\": \"commodo labore sed mollit\",\n        \"street\": \"commodo tempor occaecat ex in\"\n      },\n      \"createdDateTime\": \"1966-10-06T14:29:37.773Z\",\n      \"email\": \"cupidatat Ut ad\",\n      \"firstName\": \"in enim elit do\",\n      \"id\": 78342111,\n      \"isActive\": false,\n      \"lastName\": \"ut consectetur in\",\n      \"phone\": {\n        \"areaCode\": \"3539\",\n        \"number\": \"644342\",\n        \"countryCode\": \"tempor quis reprehenderit dolor ipsum\"\n      },\n      \"title\": \"aliquip minim voluptate velit\",\n      \"updatedDateTime\": \"1992-05-11T22:24:58.662Z\",\n      \"username\": \"aute\"\n    }\n  },\n  {\n    \"address\": {\n      \"district\": \"in qui veniam\",\n      \"province\": \"sit eiusmod\",\n      \"buildingInformation\": \"sed enim nulla id\",\n      \"country\": \"qui\",\n      \"fullAddress\": \"proident mollit sed nostrud\",\n      \"neighborhood\": \"do proident\",\n      \"street\": \"eu in tempor\"\n    },\n    \"createdDateTime\": \"1954-11-10T04:32:15.372Z\",\n    \"id\": 38661450,\n    \"orderLines\": [\n      {\n        \"id\": 86421722,\n        \"product\": {\n          \"category\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"createdDateTime\": \"2014-08-05T15:54:20.431Z\",\n          \"id\": 61703449,\n          \"price\": -89964183.85997856,\n          \"quantity\": -70400375,\n          \"title\": \"laborum\",\n          \"updatedDateTime\": \"1983-08-26T16:10:11.454Z\"\n        },\n        \"quantity\": 36221245,\n        \"totalPrice\": -62117151.433649994\n      },\n      {\n        \"id\": 79954081,\n        \"product\": {\n          \"category\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"createdDateTime\": \"1955-10-28T14:12:19.657Z\",\n          \"id\": 44436677,\n          \"price\": -10089882.390613794,\n          \"quantity\": -63896698,\n          \"title\": \"aliquip sint\",\n          \"updatedDateTime\": \"1982-11-30T19:08:48.303Z\"\n        },\n        \"quantity\": -14914678,\n        \"totalPrice\": 79394657.10570821\n      }\n    ],\n    \"totalPrice\": 48723915.431467146,\n    \"updatedDateTime\": \"1965-11-23T01:55:16.494Z\",\n    \"user\": {\n      \"address\": {\n        \"district\": \"do\",\n        \"province\": \"consectetur labore\",\n        \"buildingInformation\": \"veniam exerc\",\n        \"country\": \"esse ad mollit eu\",\n        \"fullAddress\": \"do enim Excepteur\",\n        \"neighborhood\": \"conse\",\n        \"street\": \"Duis fugiat Ut voluptate\"\n      },\n      \"createdDateTime\": \"2006-11-20T22:03:40.253Z\",\n      \"email\": \"ad magna Excepteur\",\n      \"firstName\": \"cillum aliqua nulla anim\",\n      \"id\": -27228630,\n      \"isActive\": false,\n      \"lastName\": \"pariatur\",\n      \"phone\": {\n        \"areaCode\": \"18682\",\n        \"number\": \"  \",\n        \"countryCode\": \"in\"\n      },\n      \"title\": \"nisi adipisic\",\n      \"updatedDateTime\": \"1963-01-23T02:03:09.817Z\",\n      \"username\": \"aute reprehenderit\"\n    }\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order-line",
+			"item": [
+				{
+					"name": "order/{orderId}",
+					"item": [
+						{
+							"name": "get By Order Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order-line/order/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order-line",
+										"order",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/order-line/order/:orderId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order-line",
+												"order",
+												":orderId"
+											],
+											"variable": [
+												{
+													"key": "orderId",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": 85858321,\n    \"product\": {\n      \"category\": {\n        \"id\": -3398191,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"irure cupidatat incididunt\"\n      },\n      \"createdDateTime\": \"1980-01-17T00:24:33.487Z\",\n      \"id\": 56781948,\n      \"price\": 31814964.270866588,\n      \"quantity\": 97471120,\n      \"title\": \"officia ut cupidatat sunt\",\n      \"updatedDateTime\": \"1945-04-05T07:33:16.167Z\"\n    },\n    \"quantity\": -29570205,\n    \"totalPrice\": 2752741.9240030795\n  },\n  {\n    \"id\": -35630038,\n    \"product\": {\n      \"category\": {\n        \"id\": 17742666,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"deserunt sit Lorem\"\n      },\n      \"createdDateTime\": \"1969-02-12T00:24:14.957Z\",\n      \"id\": 12020795,\n      \"price\": -28579442.391765624,\n      \"quantity\": 70520012,\n      \"title\": \"commodo ex\",\n      \"updatedDateTime\": \"1984-06-25T18:33:43.697Z\"\n    },\n    \"quantity\": -35284704,\n    \"totalPrice\": -58184700.377511464\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "save 4",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"quantity\": 71743225,\n    \"productId\": -48565729\n  },\n  {\n    \"quantity\": -12430012,\n    \"productId\": 41796435\n  }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/order-line/order/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order-line",
+										"order",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"quantity\": -7179611,\n    \"productId\": 10818409\n  },\n  {\n    \"quantity\": 8009990,\n    \"productId\": 51564466\n  }\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/order-line/order/:orderId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order-line",
+												"order",
+												":orderId"
+											],
+											"variable": [
+												{
+													"key": "orderId",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": 85858321,\n    \"product\": {\n      \"category\": {\n        \"id\": -3398191,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"irure cupidatat incididunt\"\n      },\n      \"createdDateTime\": \"1980-01-17T00:24:33.487Z\",\n      \"id\": 56781948,\n      \"price\": 31814964.270866588,\n      \"quantity\": 97471120,\n      \"title\": \"officia ut cupidatat sunt\",\n      \"updatedDateTime\": \"1945-04-05T07:33:16.167Z\"\n    },\n    \"quantity\": -29570205,\n    \"totalPrice\": 2752741.9240030795\n  },\n  {\n    \"id\": -35630038,\n    \"product\": {\n      \"category\": {\n        \"id\": 17742666,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"deserunt sit Lorem\"\n      },\n      \"createdDateTime\": \"1969-02-12T00:24:14.957Z\",\n      \"id\": 12020795,\n      \"price\": -28579442.391765624,\n      \"quantity\": 70520012,\n      \"title\": \"commodo ex\",\n      \"updatedDateTime\": \"1984-06-25T18:33:43.697Z\"\n    },\n    \"quantity\": -35284704,\n    \"totalPrice\": -58184700.377511464\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "delete 2",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order-line/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order-line",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/order-line/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order-line",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 23805567,\n  \"product\": {\n    \"category\": {\n      \"id\": 86402643,\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      },\n      \"title\": \"id occaecat repre\"\n    },\n    \"createdDateTime\": \"1953-12-14T17:43:10.599Z\",\n    \"id\": -59089084,\n    \"price\": 90320308.7450501,\n    \"quantity\": 9063974,\n    \"title\": \"dolore velit do \",\n    \"updatedDateTime\": \"1961-10-20T18:38:09.956Z\"\n  },\n  \"quantity\": 81752514,\n  \"totalPrice\": -64435909.14142292\n}"
+								}
+							]
+						},
+						{
+							"name": "get By Id 3",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order-line/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order-line",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/order-line/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order-line",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 23805567,\n  \"product\": {\n    \"category\": {\n      \"id\": 86402643,\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      },\n      \"title\": \"id occaecat repre\"\n    },\n    \"createdDateTime\": \"1953-12-14T17:43:10.599Z\",\n    \"id\": -59089084,\n    \"price\": 90320308.7450501,\n    \"quantity\": 9063974,\n    \"title\": \"dolore velit do \",\n    \"updatedDateTime\": \"1961-10-20T18:38:09.956Z\"\n  },\n  \"quantity\": 81752514,\n  \"totalPrice\": -64435909.14142292\n}"
+								}
+							]
+						},
+						{
+							"name": "update 2",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/order-line/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order-line",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/order-line/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"order-line",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 23805567,\n  \"product\": {\n    \"category\": {\n      \"id\": 86402643,\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      },\n      \"title\": \"id occaecat repre\"\n    },\n    \"createdDateTime\": \"1953-12-14T17:43:10.599Z\",\n    \"id\": -59089084,\n    \"price\": 90320308.7450501,\n    \"quantity\": 9063974,\n    \"title\": \"dolore velit do \",\n    \"updatedDateTime\": \"1961-10-20T18:38:09.956Z\"\n  },\n  \"quantity\": 81752514,\n  \"totalPrice\": -64435909.14142292\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All 5",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/order-line"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/order-line"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": 85858321,\n    \"product\": {\n      \"category\": {\n        \"id\": -3398191,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"irure cupidatat incididunt\"\n      },\n      \"createdDateTime\": \"1980-01-17T00:24:33.487Z\",\n      \"id\": 56781948,\n      \"price\": 31814964.270866588,\n      \"quantity\": 97471120,\n      \"title\": \"officia ut cupidatat sunt\",\n      \"updatedDateTime\": \"1945-04-05T07:33:16.167Z\"\n    },\n    \"quantity\": -29570205,\n    \"totalPrice\": 2752741.9240030795\n  },\n  {\n    \"id\": -35630038,\n    \"product\": {\n      \"category\": {\n        \"id\": 17742666,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"deserunt sit Lorem\"\n      },\n      \"createdDateTime\": \"1969-02-12T00:24:14.957Z\",\n      \"id\": 12020795,\n      \"price\": -28579442.391765624,\n      \"quantity\": 70520012,\n      \"title\": \"commodo ex\",\n      \"updatedDateTime\": \"1984-06-25T18:33:43.697Z\"\n    },\n    \"quantity\": -35284704,\n    \"totalPrice\": -58184700.377511464\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "get All 6",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/order-line/pageable?page=<integer>&size=<integer>&sort=[\"<string>\",\"<string>\"]",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order-line",
+								"pageable"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "<integer>",
+									"description": "(Required) "
+								},
+								{
+									"key": "size",
+									"value": "<integer>",
+									"description": "(Required) "
+								},
+								{
+									"key": "sort",
+									"value": "[\"<string>\",\"<string>\"]",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/order-line/pageable?page=<integer>&size=<integer>&sort=<string>,<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"order-line",
+										"pageable"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "<integer>"
+										},
+										{
+											"key": "sort",
+											"value": "<string>,<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"content\": [\n    {\n      \"id\": -63673041,\n      \"product\": {\n        \"category\": {\n          \"id\": -31193957,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"ullamco consequat occaecat\"\n        },\n        \"createdDateTime\": \"1953-01-09T04:59:35.451Z\",\n        \"id\": -25556883,\n        \"price\": -58238783.21703719,\n        \"quantity\": 56045440,\n        \"title\": \"Lorem\",\n        \"updatedDateTime\": \"1950-07-17T08:05:15.081Z\"\n      },\n      \"quantity\": 34614346,\n      \"totalPrice\": 34022286.06073749\n    },\n    {\n      \"id\": -11237132,\n      \"product\": {\n        \"category\": {\n          \"id\": 8962687,\n          \"parent\": {\n            \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n          },\n          \"title\": \"culpa tempor pariatur nisi l\"\n        },\n        \"createdDateTime\": \"1962-08-09T00:08:40.122Z\",\n        \"id\": -86285661,\n        \"price\": -62784567.935398616,\n        \"quantity\": 57751369,\n        \"title\": \"esse voluptate enim sed\",\n        \"updatedDateTime\": \"1954-08-23T19:38:15.886Z\"\n      },\n      \"quantity\": -92337318,\n      \"totalPrice\": 2913075.754169509\n    }\n  ],\n  \"empty\": false,\n  \"first\": false,\n  \"last\": false,\n  \"number\": -72815446,\n  \"numberOfElements\": 28817640,\n  \"pageable\": {\n    \"offset\": -37088346,\n    \"pageNumber\": -72884553,\n    \"pageSize\": -30649125,\n    \"paged\": false,\n    \"sort\": {\n      \"empty\": false,\n      \"sorted\": true,\n      \"unsorted\": false\n    },\n    \"unpaged\": false\n  },\n  \"size\": 19982388,\n  \"sort\": {\n    \"empty\": true,\n    \"sorted\": true,\n    \"unsorted\": false\n  },\n  \"totalElements\": 49190088,\n  \"totalPages\": -80293895\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "photo/product/{productId}",
+			"item": [
+				{
+					"name": "get Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/photo/product/:productId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"photo",
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "-33185061",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/photo/product/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"photo",
+										"product",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "quis ipsum dolor"
+						}
+					]
+				},
+				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": \"Ut officia nulla dolor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/photo/product/:productId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"photo",
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "-33185061",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"data\": \"Ut officia nulla dolor\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/photo/product/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"photo",
+										"product",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/product/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"product",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/product/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"product",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"category\": {\n    \"id\": -56798580,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"amet pariatur exercitation magna\"\n  },\n  \"createdDateTime\": \"2015-03-24T13:49:01.447Z\",\n  \"id\": 7607043,\n  \"price\": -10570135.122600362,\n  \"quantity\": -72701990,\n  \"title\": \"ipsum enim sed veniam\",\n  \"updatedDateTime\": \"1962-01-20T12:16:58.986Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get By Id 1",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/product/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"product",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/product/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"product",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"category\": {\n    \"id\": -56798580,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"amet pariatur exercitation magna\"\n  },\n  \"createdDateTime\": \"2015-03-24T13:49:01.447Z\",\n  \"id\": 7607043,\n  \"price\": -10570135.122600362,\n  \"quantity\": -72701990,\n  \"title\": \"ipsum enim sed veniam\",\n  \"updatedDateTime\": \"1962-01-20T12:16:58.986Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": -33505008.638114385,\n  \"quantity\": 2470233,\n  \"title\": \"reprehenderit adipisicing\",\n  \"categoryId\": 16300633\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/product/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"product",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"price\": -33505008.638114385,\n  \"quantity\": 2470233,\n  \"title\": \"reprehenderit adipisicing\",\n  \"categoryId\": 16300633\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/product/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"product",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"category\": {\n    \"id\": -56798580,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"amet pariatur exercitation magna\"\n  },\n  \"createdDateTime\": \"2015-03-24T13:49:01.447Z\",\n  \"id\": 7607043,\n  \"price\": -10570135.122600362,\n  \"quantity\": -72701990,\n  \"title\": \"ipsum enim sed veniam\",\n  \"updatedDateTime\": \"1962-01-20T12:16:58.986Z\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All 1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/product"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/product"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"category\": {\n      \"id\": 42123356,\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      },\n      \"title\": \"esse id Excepteur\"\n    },\n    \"createdDateTime\": \"1988-01-24T15:55:50.645Z\",\n    \"id\": 12036512,\n    \"price\": 63207699.51671094,\n    \"quantity\": -28762693,\n    \"title\": \"dolor ipsum in\",\n    \"updatedDateTime\": \"1944-08-17T12:50:47.927Z\"\n  },\n  {\n    \"category\": {\n      \"id\": 87602774,\n      \"parent\": {\n        \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n      },\n      \"title\": \"est aliquip officia\"\n    },\n    \"createdDateTime\": \"1971-05-25T03:30:18.154Z\",\n    \"id\": -86399764,\n    \"price\": -18246637.244084418,\n    \"quantity\": 95889449,\n    \"title\": \"cupidatat id \",\n    \"updatedDateTime\": \"2022-05-24T18:13:15.038Z\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"sunt ex qui nostrud\",\n  \"categoryId\": 74089712,\n  \"price\": -65889237.62619143,\n  \"quantity\": 74571418\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/product"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"sunt ex qui nostrud\",\n  \"categoryId\": 74089712,\n  \"price\": -65889237.62619143,\n  \"quantity\": 74571418\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/product"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"category\": {\n    \"id\": -56798580,\n    \"parent\": {\n      \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n    },\n    \"title\": \"amet pariatur exercitation magna\"\n  },\n  \"createdDateTime\": \"2015-03-24T13:49:01.447Z\",\n  \"id\": 7607043,\n  \"price\": -10570135.122600362,\n  \"quantity\": -72701990,\n  \"title\": \"ipsum enim sed veniam\",\n  \"updatedDateTime\": \"1962-01-20T12:16:58.986Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get Filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/product/filter?title=quis ipsum dolor&categoryIds=-77911327&categoryIds=-86606916&page=<integer>&size=<integer>&sort=[\"<string>\",\"<string>\"]",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "quis ipsum dolor",
+									"description": "(Required) "
+								},
+								{
+									"key": "categoryIds",
+									"value": "-77911327",
+									"description": "(Required) "
+								},
+								{
+									"key": "categoryIds",
+									"value": "-86606916",
+									"description": "(Required) "
+								},
+								{
+									"key": "page",
+									"value": "<integer>",
+									"description": "(Required) "
+								},
+								{
+									"key": "size",
+									"value": "<integer>",
+									"description": "(Required) "
+								},
+								{
+									"key": "sort",
+									"value": "[\"<string>\",\"<string>\"]",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/product/filter?title=quis ipsum dolor&categoryIds=-91934914&categoryIds=-6214401&page=<integer>&size=<integer>&sort=<string>,<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"product",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "quis ipsum dolor"
+										},
+										{
+											"key": "categoryIds",
+											"value": "-91934914"
+										},
+										{
+											"key": "categoryIds",
+											"value": "-6214401"
+										},
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "<integer>"
+										},
+										{
+											"key": "sort",
+											"value": "<string>,<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"content\": [\n    {\n      \"category\": {\n        \"id\": -77914494,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"reprehenderit aute ci\"\n      },\n      \"createdDateTime\": \"2013-10-04T07:06:17.245Z\",\n      \"id\": 70180260,\n      \"price\": 16483287.161251739,\n      \"quantity\": -59897705,\n      \"title\": \"quis aliqua incididunt qui commodo\",\n      \"updatedDateTime\": \"1951-12-22T10:49:46.064Z\"\n    },\n    {\n      \"category\": {\n        \"id\": 96557499,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"dolore enim cupidatat\"\n      },\n      \"createdDateTime\": \"2017-03-16T17:08:23.117Z\",\n      \"id\": -98599447,\n      \"price\": 36567402.66746113,\n      \"quantity\": -77367238,\n      \"title\": \"incididunt Ut eu eiusmod\",\n      \"updatedDateTime\": \"1987-05-20T06:46:00.381Z\"\n    }\n  ],\n  \"empty\": false,\n  \"first\": false,\n  \"last\": false,\n  \"number\": 46802175,\n  \"numberOfElements\": -24902276,\n  \"pageable\": {\n    \"offset\": -97442296,\n    \"pageNumber\": 12150748,\n    \"pageSize\": -96473302,\n    \"paged\": false,\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": false,\n      \"unsorted\": true\n    },\n    \"unpaged\": true\n  },\n  \"size\": -34899106,\n  \"sort\": {\n    \"empty\": false,\n    \"sorted\": false,\n    \"unsorted\": true\n  },\n  \"totalElements\": -63587996,\n  \"totalPages\": -10998947\n}"
+						}
+					]
+				},
+				{
+					"name": "get All 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/product/pageable?page=<integer>&size=<integer>&sort=[\"<string>\",\"<string>\"]",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"pageable"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "<integer>",
+									"description": "(Required) "
+								},
+								{
+									"key": "size",
+									"value": "<integer>",
+									"description": "(Required) "
+								},
+								{
+									"key": "sort",
+									"value": "[\"<string>\",\"<string>\"]",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/product/pageable?page=<integer>&size=<integer>&sort=<string>,<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"product",
+										"pageable"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>"
+										},
+										{
+											"key": "size",
+											"value": "<integer>"
+										},
+										{
+											"key": "sort",
+											"value": "<string>,<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"content\": [\n    {\n      \"category\": {\n        \"id\": -52270842,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"mollit occaecat culpa et\"\n      },\n      \"createdDateTime\": \"1959-05-22T14:02:58.890Z\",\n      \"id\": -41254612,\n      \"price\": 77144672.21346548,\n      \"quantity\": 96581327,\n      \"title\": \"id\",\n      \"updatedDateTime\": \"1971-07-12T15:26:49.206Z\"\n    },\n    {\n      \"category\": {\n        \"id\": -4741360,\n        \"parent\": {\n          \"value\": \"<Circular reference to #/components/schemas/CategoryResponse detected>\"\n        },\n        \"title\": \"cillum dolore\"\n      },\n      \"createdDateTime\": \"1945-02-08T15:48:09.201Z\",\n      \"id\": -58500103,\n      \"price\": 35364363.24356064,\n      \"quantity\": -78154948,\n      \"title\": \"ipsum velit proident ex\",\n      \"updatedDateTime\": \"1991-01-04T19:57:52.981Z\"\n    }\n  ],\n  \"empty\": true,\n  \"first\": false,\n  \"last\": true,\n  \"number\": 29417350,\n  \"numberOfElements\": 30261333,\n  \"pageable\": {\n    \"offset\": 19191575,\n    \"pageNumber\": -40675681,\n    \"pageSize\": -95964800,\n    \"paged\": true,\n    \"sort\": {\n      \"empty\": true,\n      \"sorted\": true,\n      \"unsorted\": true\n    },\n    \"unpaged\": false\n  },\n  \"size\": -27440030,\n  \"sort\": {\n    \"empty\": false,\n    \"sorted\": false,\n    \"unsorted\": false\n  },\n  \"totalElements\": -82812414,\n  \"totalPages\": 33415101\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "get By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/user/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"address\": {\n    \"district\": \"id \",\n    \"province\": \"id commodo\",\n    \"buildingInformation\": \"sunt aliquip adipisicing\",\n    \"country\": \"Lorem non sunt\",\n    \"fullAddress\": \"quis consectetur\",\n    \"neighborhood\": \"laboris\",\n    \"street\": \"eu ut sunt officia id\"\n  },\n  \"createdDateTime\": \"1977-06-20T12:06:27.306Z\",\n  \"email\": \"in adipisicing nulla sit\",\n  \"firstName\": \"aliquip cupidatat incididunt\",\n  \"id\": 80365069,\n  \"isActive\": true,\n  \"lastName\": \"eiusmod dolore\",\n  \"phone\": {\n    \"areaCode\": \"4205\",\n    \"number\": \"  \",\n    \"countryCode\": \"velit qui deserunt in\"\n  },\n  \"title\": \"aliquip do velit ipsum\",\n  \"updatedDateTime\": \"2021-01-03T17:39:12.477Z\",\n  \"username\": \"do reprehenderit ex laboris\"\n}"
+								}
+							]
+						},
+						{
+							"name": "save",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"çynhüK\",\n  \"lastName\": \"  \",\n  \"address\": {\n    \"district\": \"id\",\n    \"province\": \"ea ad dolor\",\n    \"buildingInformation\": \"aliqua dolor fugiat velit\",\n    \"country\": \"qui\",\n    \"fullAddress\": \"est aliquip mollit ullamco\",\n    \"neighborhood\": \"mollit sunt fugiat Ut deserunt\",\n    \"street\": \"mol\"\n  },\n  \"email\": \"sint\",\n  \"password\": \"ad amet\",\n  \"phone\": {\n    \"areaCode\": \"  \",\n    \"number\": \"868855992\",\n    \"countryCode\": \"aliquip in irure adipisicing\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"firstName\": \"çynhüK\",\n  \"lastName\": \"  \",\n  \"address\": {\n    \"district\": \"id\",\n    \"province\": \"ea ad dolor\",\n    \"buildingInformation\": \"aliqua dolor fugiat velit\",\n    \"country\": \"qui\",\n    \"fullAddress\": \"est aliquip mollit ullamco\",\n    \"neighborhood\": \"mollit sunt fugiat Ut deserunt\",\n    \"street\": \"mol\"\n  },\n  \"email\": \"sint\",\n  \"password\": \"ad amet\",\n  \"phone\": {\n    \"areaCode\": \"  \",\n    \"number\": \"868855992\",\n    \"countryCode\": \"aliquip in irure adipisicing\"\n  }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/user/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"address\": {\n    \"district\": \"id \",\n    \"province\": \"id commodo\",\n    \"buildingInformation\": \"sunt aliquip adipisicing\",\n    \"country\": \"Lorem non sunt\",\n    \"fullAddress\": \"quis consectetur\",\n    \"neighborhood\": \"laboris\",\n    \"street\": \"eu ut sunt officia id\"\n  },\n  \"createdDateTime\": \"1977-06-20T12:06:27.306Z\",\n  \"email\": \"in adipisicing nulla sit\",\n  \"firstName\": \"aliquip cupidatat incididunt\",\n  \"id\": 80365069,\n  \"isActive\": true,\n  \"lastName\": \"eiusmod dolore\",\n  \"phone\": {\n    \"areaCode\": \"4205\",\n    \"number\": \"  \",\n    \"countryCode\": \"velit qui deserunt in\"\n  },\n  \"title\": \"aliquip do velit ipsum\",\n  \"updatedDateTime\": \"2021-01-03T17:39:12.477Z\",\n  \"username\": \"do reprehenderit ex laboris\"\n}"
+								}
+							]
+						},
+						{
+							"name": "active User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user/:id/active",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										":id",
+										"active"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-33185061",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/user/:id/active",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":id",
+												"active"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "-33185061",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": "{{baseUrl}}/user"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": "{{baseUrl}}/user"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"address\": {\n      \"district\": \"adipisicing aliquip sunt dolore\",\n      \"province\": \"eu dolore in enim\",\n      \"buildingInformation\": \"dolor ut esse veniam\",\n      \"country\": \"adipisicing\",\n      \"fullAddress\": \"exercitation minim\",\n      \"neighborhood\": \"sunt minim esse sit pariatur\",\n      \"street\": \"reprehenderit esse anim\"\n    },\n    \"createdDateTime\": \"2008-06-06T05:48:17.644Z\",\n    \"email\": \"dolor adipisicing\",\n    \"firstName\": \"exercitation eu\",\n    \"id\": 8522040,\n    \"isActive\": false,\n    \"lastName\": \"quis\",\n    \"phone\": {\n      \"areaCode\": \"951\",\n      \"number\": \"0554112\",\n      \"countryCode\": \"sunt\"\n    },\n    \"title\": \"dolor esse\",\n    \"updatedDateTime\": \"1970-08-25T23:04:21.419Z\",\n    \"username\": \"labore\"\n  },\n  {\n    \"address\": {\n      \"district\": \"pariatur sit minim est\",\n      \"province\": \"commodo dolor\",\n      \"buildingInformation\": \"in nulla aute dolore\",\n      \"country\": \"sit cillum\",\n      \"fullAddress\": \"nisi anim nostrud\",\n      \"neighborhood\": \"in aliqua officia aliquip\",\n      \"street\": \"enim ad dolore nisi\"\n    },\n    \"createdDateTime\": \"1952-09-14T05:25:12.940Z\",\n    \"email\": \"magna\",\n    \"firstName\": \"Lorem in sunt\",\n    \"id\": -69296121,\n    \"isActive\": false,\n    \"lastName\": \"eu\",\n    \"phone\": {\n      \"areaCode\": \"6902\",\n      \"number\": \"84903259\",\n      \"countryCode\": \"sit aliquip\"\n    },\n    \"title\": \"est culpa enim\",\n    \"updatedDateTime\": \"2021-06-26T00:42:34.068Z\",\n    \"username\": \"an\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "save 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"çynhüK\",\n  \"lastName\": \"  \",\n  \"address\": {\n    \"district\": \"id\",\n    \"province\": \"ea ad dolor\",\n    \"buildingInformation\": \"aliqua dolor fugiat velit\",\n    \"country\": \"qui\",\n    \"fullAddress\": \"est aliquip mollit ullamco\",\n    \"neighborhood\": \"mollit sunt fugiat Ut deserunt\",\n    \"street\": \"mol\"\n  },\n  \"email\": \"sint\",\n  \"password\": \"ad amet\",\n  \"phone\": {\n    \"areaCode\": \"  \",\n    \"number\": \"868855992\",\n    \"countryCode\": \"aliquip in irure adipisicing\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/user"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"çynhüK\",\n  \"lastName\": \"  \",\n  \"address\": {\n    \"district\": \"id\",\n    \"province\": \"ea ad dolor\",\n    \"buildingInformation\": \"aliqua dolor fugiat velit\",\n    \"country\": \"qui\",\n    \"fullAddress\": \"est aliquip mollit ullamco\",\n    \"neighborhood\": \"mollit sunt fugiat Ut deserunt\",\n    \"street\": \"mol\"\n  },\n  \"email\": \"sint\",\n  \"password\": \"ad amet\",\n  \"phone\": {\n    \"areaCode\": \"  \",\n    \"number\": \"868855992\",\n    \"countryCode\": \"aliquip in irure adipisicing\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/user"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"address\": {\n    \"district\": \"id \",\n    \"province\": \"id commodo\",\n    \"buildingInformation\": \"sunt aliquip adipisicing\",\n    \"country\": \"Lorem non sunt\",\n    \"fullAddress\": \"quis consectetur\",\n    \"neighborhood\": \"laboris\",\n    \"street\": \"eu ut sunt officia id\"\n  },\n  \"createdDateTime\": \"1977-06-20T12:06:27.306Z\",\n  \"email\": \"in adipisicing nulla sit\",\n  \"firstName\": \"aliquip cupidatat incididunt\",\n  \"id\": 80365069,\n  \"isActive\": true,\n  \"lastName\": \"eiusmod dolore\",\n  \"phone\": {\n    \"areaCode\": \"4205\",\n    \"number\": \"  \",\n    \"countryCode\": \"velit qui deserunt in\"\n  },\n  \"title\": \"aliquip do velit ipsum\",\n  \"updatedDateTime\": \"2021-01-03T17:39:12.477Z\",\n  \"username\": \"do reprehenderit ex laboris\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"occaecat ut elit voluptate sit\",\n  \"subject\": \"est\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/contract"
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\": \"occaecat ut elit voluptate sit\",\n  \"subject\": \"est\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/contract"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{bearerToken}}"
+		}
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8088/api/v1",
+			"type": "string"
+		}
+	]
+}
