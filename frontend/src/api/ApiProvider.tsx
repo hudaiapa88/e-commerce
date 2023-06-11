@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import i18n from "../i18n";
 
 export const BASE_URL = "http://26.106.208.95:8088/api/v1";
 
@@ -10,6 +11,7 @@ const ApiProvider = (props) =>
   useMemo(() => {
     axios.interceptors.request.use(function (config) {
       const token = localStorage.getItem("token");
+      config.headers["Accept-Language"] = i18n.language;
       if (token) {
         config.headers["Authorization"] = `Bearer ${token}`;
       }
