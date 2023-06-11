@@ -1,0 +1,8 @@
+com\uc\ecommerce\rest\ApplicationTests.class
+com\uc\ecommerce\utils\TestAccountUtility.class
+com\uc\ecommerce\RequestSpec.class
+com\uc\ecommerce\rest\account\AccountControllerLoginTest.class
+com\uc\ecommerce\ResponseSpec.class
+com\uc\ecommerce\utils\RandomUtils.class
+com\uc\ecommerce\EcommerceApplicationTests.class
+com\uc\ecommerce\utils\TestUserUtility.class
