@@ -13,13 +13,13 @@ import lombok.Setter;
 @Embeddable
 @Getter
 public class Phone {
-    @NotEmpty(message = "Telefon alanı boş olamaz.")
-    @Pattern(regexp = "^[0-9]*$",message = "Lütfen geçerli bir telefon numarası giriniz.")
-    @Size(min = 2,max = 13,message = "Lütfen geçerli bir telefon numarası giriniz.")
+    @NotEmpty(message = "{constraint.register.phone.NotNull.message}")
+    @Pattern(regexp = "^[0-9]*$",message = "{constraint.register.phone.Pattern.message}")
+    @Size(min = 2,max = 13,message = "{constraint.register.phone.Size.message}")
     private String number;
     @Setter
-    @NotEmpty(message = "Telefon alanı boş olamaz.")
-    @Pattern(regexp = "^[0-9+]*$",message = "Lütfen geçerli bir telefon numarası giriniz.")
+    @NotEmpty(message = "{constraint.register.phone.NotNull.message}")
+    @Pattern(regexp = "^[0-9]*$",message = "{constraint.register.phone.Pattern.message}")
     @Size(min = 2,max = 5)
     private String areaCode;
     @Setter

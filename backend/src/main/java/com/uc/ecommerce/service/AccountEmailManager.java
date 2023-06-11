@@ -9,22 +9,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
-public class AccountEmailManager implements AccountEmailService {
-    private final EmailSender emailSender;
-    @Value("${ecommerce.mail.to.appEmail}")
-    private String to;
-    @Value("${ecommerce.mail.from.appEmail}")
-    private String from;
-    @Value("${app.base.url}")
-    private String baseUrl;
+public class AccountEmailManager extends EmailManager implements AccountEmailService {
+
+    public AccountEmailManager(EmailSender emailSender) {
+        super(emailSender);
+    }
+
     @Override
     public void sendEmailToAdminForNewUser(User user) {
         emailSender.send(EmailDetails.builder()
                         .from(from)
-                        .to(to)
+                        .to(user.getEmail())
                         .subject("Üyelik Başvurusu")
-                        .text(baseUrl+"/user/active/"+user.getId())
+                        .text("üyeliğinizi tamalamak için linke tıklayın.    "+
+                                baseUrl+"/account/active/"+user.getId()+"?code="+user.getVerificationCode()
+
+                        )
                 .build());
     }
 }

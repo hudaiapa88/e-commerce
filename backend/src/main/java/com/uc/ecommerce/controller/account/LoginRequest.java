@@ -8,12 +8,12 @@ import lombok.Setter;
 @Getter
 public class LoginRequest {
 
-    @NotEmpty(message = "Kullanıcı adı boş geçilemez.")
-    @Size( max = 50,message = "Kullanıcı adı maximum 50 karakter olabilir.")
+    @NotEmpty(message = "{constraint.login.username.Empty.message}")
+    @Size( max = 50,message = "{constraint.login.username.Size.message}")
     private String username;
     @Setter
-    @NotEmpty(message = "Şifre boş geçilemez.")
-    @Size(min = 6, max = 32,message = "Şifrenizin uzunlu 6 ile 32 arasında olabilir." )
+    @NotEmpty(message = "{constraint.login.password.Empty.message}")
+    @Size(min = 6, max = 32,message = "{constraint.login.password.Size.message}" )
     private String password;
     @Setter
     private boolean rememberMe;

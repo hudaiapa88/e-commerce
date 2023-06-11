@@ -1,14 +1,17 @@
 package com.uc.ecommerce.model.entity.account;
 
 
-import com.uc.ecommerce.model.dto.account.SaveUserRequest;
-import com.uc.ecommerce.model.dto.account.UpdateUserRequest;
 import com.uc.ecommerce.model.embedded.Address;
+import com.uc.ecommerce.model.entity.card.CreditCard;
 import com.uc.ecommerce.model.enums.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -23,8 +26,8 @@ public class User extends Account {
     private Address address;
 
 
-
-
+    @OneToMany(mappedBy = "user")
+    private List<CreditCard> creditCards = new ArrayList<>();
 
 
 }

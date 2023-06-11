@@ -2,11 +2,8 @@ package com.uc.ecommerce.controller.account;
 
 
 import com.uc.ecommerce.core.security.SecurityContextUtil;
-import com.uc.ecommerce.core.util.annotation.IsAuthenticated;
-import com.uc.ecommerce.core.util.annotation.OnlyAdmin;
-import com.uc.ecommerce.core.util.annotation.PermitAll;
-import com.uc.ecommerce.model.dto.account.AccountResponse;
-import com.uc.ecommerce.model.entity.account.Account;
+import com.uc.ecommerce.core.security.annotation.IsAuthenticated;
+import com.uc.ecommerce.core.security.annotation.PermitAll;
 import com.uc.ecommerce.service.imp.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -54,9 +51,9 @@ public class AccountController {
     )
     @PostMapping("/login")
     @PermitAll
-    public LoginResponse loginWithPassword(@Valid @RequestBody LoginRequest loginRequest) {
+    public LoginResponse login(@Valid @RequestBody LoginRequest loginRequest) {
 
-        return accountService.loginWithPassword(loginRequest);
+        return accountService.login(loginRequest);
     }
 
     @GetMapping("/logout")
@@ -65,9 +62,9 @@ public class AccountController {
 
         accountService.logout(request, response);
     }
-    @PostMapping("/user/active/{userId}")
-    public void activeUser(@PathVariable Long userId){
-        accountService.activeUser(userId);
+    @GetMapping("/active/{id}")
+    public void activeUser(@PathVariable Long id,@RequestParam String code){
+        accountService.active(id,code);
     }
 
 }

@@ -22,7 +22,7 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     boolean existsByUsername(String userName);
 
     @Query("FROM User u WHERE CONCAT(u.phone.areaCode, u.phone.number) = ?1")
-    Optional<Account> findByFullPhone(String username);
+    Optional<Account> findByFullPhone(String phone);
 
     Boolean existsByEmail(String email);
 

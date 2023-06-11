@@ -1,15 +1,84 @@
-00:41:38.495 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
-00:41:38.556 [main] INFO  c.uc.ecommerce.EcommerceApplication - Starting EcommerceApplication using Java 17.0.3 with PID 21828 (C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend\target\classes started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-00:41:38.557 [main] INFO  c.uc.ecommerce.EcommerceApplication - The following 1 profile is active: "dev"
-00:41:41.684 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-00:41:41.811 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
-00:41:41.817 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
-00:41:42.050 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
-00:41:42.523 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.MySQL8Dialect, version: 8.0
-00:41:42.526 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-00:41:42.576 [main] WARN  org.hibernate.orm.incubating - HHH90006001: Encountered incubating setting [hibernate.type.preferred_uuid_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details.
-00:41:42.943 [main] WARN  org.hibernate.orm.incubating - HHH90006001: Encountered incubating setting [hibernate.type.preferred_uuid_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details.
-00:41:42.946 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
-00:41:43.957 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-00:41:45.561 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-00:41:46.515 [main] INFO  c.uc.ecommerce.EcommerceApplication - Started EcommerceApplication in 8.516 seconds (process running for 9.68)
+00:38:55.345 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+00:38:55.411 [main] INFO  c.uc.ecommerce.EcommerceApplication - Starting EcommerceApplication using Java 17.0.3 with PID 17500 (C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend\target\classes started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+00:38:55.413 [main] INFO  c.uc.ecommerce.EcommerceApplication - The following 1 profile is active: "dev"
+00:38:59.211 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+00:38:59.346 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+00:38:59.355 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+00:38:59.594 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+00:39:00.071 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.MySQL8Dialect, version: 8.0
+00:39:00.073 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+00:39:00.600 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+00:39:01.830 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+00:39:05.781 [main] INFO  c.uc.ecommerce.EcommerceApplication - Started EcommerceApplication in 10.934 seconds (process running for 12.024)
+00:39:34.361 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+00:39:34.367 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+00:39:34.915 [http-nio-8088-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot invoke "String.replaceAll(String, String)" because "username" is null]
+00:39:50.083 [http-nio-8088-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+00:41:09.017 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+00:41:09.071 [main] INFO  c.uc.ecommerce.EcommerceApplication - Starting EcommerceApplication using Java 17.0.3 with PID 9428 (C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend\target\classes started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+00:41:09.073 [main] INFO  c.uc.ecommerce.EcommerceApplication - The following 1 profile is active: "dev"
+00:41:12.425 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+00:41:12.524 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+00:41:12.528 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+00:41:12.743 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+00:41:13.167 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.MySQL8Dialect, version: 8.0
+00:41:13.170 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+00:41:13.682 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+00:41:14.817 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+00:41:20.654 [main] INFO  c.uc.ecommerce.EcommerceApplication - Started EcommerceApplication in 12.103 seconds (process running for 13.008)
+00:41:22.559 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+00:41:22.561 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+01:14:28.479 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+01:14:28.533 [main] INFO  c.uc.ecommerce.EcommerceApplication - Starting EcommerceApplication using Java 17.0.3 with PID 11128 (C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend\target\classes started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+01:14:28.534 [main] INFO  c.uc.ecommerce.EcommerceApplication - The following 1 profile is active: "dev"
+01:14:32.116 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:14:32.229 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+01:14:32.233 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+01:14:32.590 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+01:14:33.024 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.MySQL8Dialect, version: 8.0
+01:14:33.026 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+01:14:33.510 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+01:14:34.849 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01:14:39.157 [main] INFO  c.uc.ecommerce.EcommerceApplication - Started EcommerceApplication in 11.144 seconds (process running for 12.076)
+01:14:39.368 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+01:14:39.370 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+01:15:44.385 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+01:15:44.443 [main] INFO  c.uc.ecommerce.EcommerceApplication - Starting EcommerceApplication using Java 17.0.3 with PID 13284 (C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend\target\classes started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+01:15:44.446 [main] INFO  c.uc.ecommerce.EcommerceApplication - The following 1 profile is active: "dev"
+01:15:48.071 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:15:48.223 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+01:15:48.230 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+01:15:48.457 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+01:15:48.920 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.MySQL8Dialect, version: 8.0
+01:15:48.923 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+01:15:49.460 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+01:15:50.792 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01:15:55.088 [main] INFO  c.uc.ecommerce.EcommerceApplication - Started EcommerceApplication in 11.168 seconds (process running for 12.086)
+01:15:55.241 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+01:15:55.244 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+01:54:45.775 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+01:54:45.837 [main] INFO  c.uc.ecommerce.EcommerceApplication - Starting EcommerceApplication using Java 17.0.3 with PID 10976 (C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend\target\classes started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+01:54:45.841 [main] INFO  c.uc.ecommerce.EcommerceApplication - The following 1 profile is active: "dev"
+01:54:50.511 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:54:50.826 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+01:54:50.833 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+01:54:51.103 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+01:54:51.624 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.MySQL8Dialect, version: 8.0
+01:54:51.626 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+01:54:52.242 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+01:54:54.121 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01:54:57.994 [main] INFO  c.uc.ecommerce.EcommerceApplication - Started EcommerceApplication in 12.812 seconds (process running for 13.961)
+02:38:12.377 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+02:38:12.436 [main] INFO  c.uc.ecommerce.EcommerceApplication - Starting EcommerceApplication using Java 17.0.3 with PID 11760 (C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend\target\classes started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+02:38:12.439 [main] INFO  c.uc.ecommerce.EcommerceApplication - The following 1 profile is active: "dev"
+02:38:16.246 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02:38:16.352 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+02:38:16.357 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+02:38:16.595 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+02:38:17.048 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.MySQL8Dialect, version: 8.0
+02:38:17.051 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+02:38:17.555 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+02:38:18.880 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+02:38:23.647 [main] INFO  c.uc.ecommerce.EcommerceApplication - Started EcommerceApplication in 11.762 seconds (process running for 12.738)
+02:38:25.885 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+02:38:25.888 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms

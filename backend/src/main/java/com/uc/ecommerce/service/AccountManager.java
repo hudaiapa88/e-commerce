@@ -9,15 +9,20 @@ import com.uc.ecommerce.core.exception.validator.UserDisabledException;
 import com.uc.ecommerce.core.security.CustomAccountDetails;
 import com.uc.ecommerce.core.security.JwtTokenUtil;
 import com.uc.ecommerce.core.security.SecurityContextUtil;
+import com.uc.ecommerce.core.validator.VerificationCodeValidator;
+import com.uc.ecommerce.core.validator.WrongEntryValidator;
 import com.uc.ecommerce.model.entity.account.Account;
+import com.uc.ecommerce.model.entity.account.Admin;
 import com.uc.ecommerce.model.entity.account.User;
+import com.uc.ecommerce.model.enums.AccountLogType;
 import com.uc.ecommerce.repository.AccountRepository;
+import com.uc.ecommerce.service.imp.AccountLogService;
 import com.uc.ecommerce.service.imp.AccountService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -28,6 +33,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 import static org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY;
 
 @Service
@@ -36,16 +43,19 @@ public class AccountManager implements AccountService {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenUtil jwtTokenUtil;
     private final AccountRepository accountRepository;
+    private final VerificationCodeValidator verificationCodeValidator;
     private final SecurityContextUtil securityContextUtil;
+    private final AccountLogService accountLogService;
+    private final WrongEntryValidator wrongEntryValidator;
 
     @Override
-    public LoginResponse loginWithPassword(LoginRequest customerLoginRequest) {
+    public LoginResponse login(LoginRequest loginRequest) {
 
         try {
-            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(customerLoginRequest.getUsername(), customerLoginRequest.getPassword()));
+            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
             CustomAccountDetails customUserDetails = (CustomAccountDetails) authentication.getPrincipal();
             Account currentUser = customUserDetails.getAccount();
-            final String token = jwtTokenUtil.generate(customUserDetails, customerLoginRequest.isRememberMe());
+            final String token = jwtTokenUtil.generate(customUserDetails, loginRequest.isRememberMe());
             SecurityContext sc = SecurityContextHolder.getContext();
             sc.setAuthentication(authentication);
             HttpServletRequest request = securityContextUtil.getCurrentHttpRequest().get();
@@ -54,7 +64,13 @@ public class AccountManager implements AccountService {
             return new LoginResponse(currentUser.getUsername(), token, currentUser.getRole());
 
         } catch (BadCredentialsException badCredentialsException) {
-
+            Account account = findByUserName(loginRequest.getUsername());
+            if (account instanceof User) {
+                accountLogService.save(account, "Wrong entry", AccountLogType.WRONG_ENTRY);
+                if (wrongEntryValidator.validate(account)) {
+                    disableAccount(account);
+                }
+            }
             throw new IncorrectEntryException("Kullanıcı adını veya şifreyi yanlış girdiniz.");
 
         } catch (DisabledException disabledException) {
@@ -63,7 +79,13 @@ public class AccountManager implements AccountService {
     }
 
     @Override
-        public Account findByUserName(String username) {
+    public void disableAccount(Account account) {
+        account.setIsActive(Boolean.FALSE);
+        accountRepository.save(account);
+    }
+
+    @Override
+    public Account findByUserName(String username) {
         return accountRepository.findByUsername(username).orElseThrow(() -> new EntityNotFoundException("Kullanıcı adı bulunamadı, lütfen kontrol ediniz ."));
     }
 
@@ -80,15 +102,24 @@ public class AccountManager implements AccountService {
     }
 
     @Override
-    public void activeUser(Long userId) {
-        Account account=findById(userId);
+    public void active(Long id, String code) {
+        Account account = findById(id);
+        verificationCodeValidator.validate(account, code);
         account.setIsActive(true);
         accountRepository.save(account);
     }
 
     @Override
+    public boolean existByEmail(String email) {
+        return accountRepository.existsByEmail(email);
+    }
+
+
+
+
+    @Override
     public Account findById(Long id) {
-        return accountRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Kullanıcı bulunamadı."));
+        return accountRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Kullanıcı bulunamadı."));
     }
 
 

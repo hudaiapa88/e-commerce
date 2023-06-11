@@ -14,30 +14,20 @@ import lombok.Setter;
 @DiscriminatorColumn(name = "role", discriminatorType = DiscriminatorType.STRING)
 @Table(uniqueConstraints = {@UniqueConstraint(name = "UK_User_Phone", columnNames = {"phone_areaCode", "phone_number"})})
 public class Account extends AbstractTimestampEntity {
-
     private String firstName;
-
     private String lastName;
-
     @Column(unique = true)
     private String username;
-
     private String password;
-
     @Embedded
     private Phone phone;
-
     private String email;
-
     @Column(insertable=false, updatable=false)
     @Enumerated(EnumType.STRING)
     private Role role;
-
-    private String firebaseTokenMobile;
-
-    private String firebaseTokenWeb;
-
+    private String verificationCode;
     private Boolean isActive ;
+
 
 
 }

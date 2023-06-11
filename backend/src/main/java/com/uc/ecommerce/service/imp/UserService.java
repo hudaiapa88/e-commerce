@@ -13,4 +13,6 @@ public interface UserService {
     User findByUsername(String username);
     UserResponse getById(Long id);
     User findById(Long id);
+
+    void active(Long id);
 }
