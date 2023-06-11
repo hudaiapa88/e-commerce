@@ -1,11 +1,11 @@
 version: '3.3'
 services:
-  db:
-    image: mysql:5.7
-    restart: always
+  mysqldb:
+    image: "mysql:8.0"
+    networks:
+      - ecommerce
     environment:
-
-      MYSQL_DATABASE: 'db'
+      MYSQL_DATABASE: 'ecommerce'
       # So you don't have to use root, but you can if you like
       MYSQL_USER: 'user'
       # You can use whatever password you like
@@ -30,9 +30,9 @@ services:
     networks:
       - ecommerce
     environment:
-      - spring.datasource.url=jdbc:mariadb://db:3306/ecommerce?createDatabaseIfNotExist=true
+      - spring.datasource.url=jdbc:mariadb://mysqldb:3306/ecommerce?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     depends_on:
-      - db
+      - mysqldb
 
 volumes:
   my-db:
