@@ -1,11 +1,10 @@
 version: '3.3'
 services:
   mysqldb:
-    image: "mysql:8.0"
+    image: mysql:latest
     networks:
       - ecommerce
     environment:
-      MYSQL_DATABASE: 'ecommerce'
       # So you don't have to use root, but you can if you like
       MYSQL_USER: 'user'
       # You can use whatever password you like
@@ -27,6 +26,8 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
+    ports:
+      - 8088:8088
     networks:
       - ecommerce
     environment:
