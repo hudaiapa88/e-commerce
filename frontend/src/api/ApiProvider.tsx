@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import i18n from "../i18n";
 
-export const BASE_URL = "http://26.106.208.95:8088/api/v1";
+export const BASE_URL = "http://localhost:8088/api/v1";
 
 axios.defaults.baseURL = BASE_URL;
 
