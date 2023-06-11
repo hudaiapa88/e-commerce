@@ -30,7 +30,7 @@ services:
     networks:
       - ecommerce
     environment:
-      - spring.datasource.url=jdbc:mysql://mysqldb:3306/ecommerce?allowPublicKeyRetrieval=true
+      - spring.datasource.url=jdbc:mariadb://db:3306/ecommerce?createDatabaseIfNotExist=true
     depends_on:
       - db
 
