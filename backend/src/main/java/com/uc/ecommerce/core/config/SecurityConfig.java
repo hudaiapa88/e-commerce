@@ -32,7 +32,7 @@ import org.springframework.web.filter.CorsFilter;
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity()
+@EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
 

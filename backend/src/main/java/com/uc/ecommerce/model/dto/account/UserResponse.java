@@ -13,5 +13,6 @@ public class UserResponse extends TimestampBaseDto {
     private String username;
     private Phone phone;
     private String email;
+    private Boolean isActive;
     private String title;
 }

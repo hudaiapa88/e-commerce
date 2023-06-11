@@ -26,7 +26,7 @@ public class OrderController {
         return orderService.save(saveOrderRequest,isSaveCard);
     }
     @OnlyAdmin
-    @PostMapping("/{id}")
+    @PutMapping("/{id}/ship-it")
     public OrderResponse orderShipIt(@PathVariable Long id){
         return orderService.orderShipIt(id);
     }

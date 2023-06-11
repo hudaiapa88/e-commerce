@@ -2,6 +2,7 @@ package com.uc.ecommerce.service;
 
 
 import com.uc.ecommerce.core.exception.EntityNotFoundException;
+import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.model.dto.category.CategoryResponse;
 import com.uc.ecommerce.model.dto.category.SaveCategoryRequest;
 import com.uc.ecommerce.model.dto.category.UpdateCategoryRequest;
@@ -63,7 +64,7 @@ public class CategoryManager implements CategoryService {
     @Override
 
     public Category findByIdAndParentNull(Long categoryId) {
-        return categoryRepository.findByIdAndParentNull(categoryId).orElseThrow(()->new EntityNotFoundException("Ana kategori bulunamadı."));
+        return categoryRepository.findByIdAndParentNull(categoryId).orElseThrow(()->new EntityNotFoundException(Translator.toLocale("category.EntityNotFoundException")));
     }
     @Override
     public List<Category> findAllParent() {

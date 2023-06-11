@@ -6,6 +6,7 @@ import com.uc.ecommerce.controller.account.LoginResponse;
 import com.uc.ecommerce.core.exception.EntityNotFoundException;
 import com.uc.ecommerce.core.exception.IncorrectEntryException;
 import com.uc.ecommerce.core.exception.validator.UserDisabledException;
+import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.core.security.CustomAccountDetails;
 import com.uc.ecommerce.core.security.JwtTokenUtil;
 import com.uc.ecommerce.core.security.SecurityContextUtil;
@@ -71,10 +72,10 @@ public class AccountManager implements AccountService {
                     disableAccount(account);
                 }
             }
-            throw new IncorrectEntryException("Kullanıcı adını veya şifreyi yanlış girdiniz.");
+            throw new IncorrectEntryException(Translator.toLocale("account.IncorrectEntryException"));
 
         } catch (DisabledException disabledException) {
-            throw new UserDisabledException("Hesabınızın Yönetici tarafından Onaylanması bekleniyor.");
+            throw new UserDisabledException(Translator.toLocale("account.DisabledException"));
         }
     }
 
@@ -86,7 +87,7 @@ public class AccountManager implements AccountService {
 
     @Override
     public Account findByUserName(String username) {
-        return accountRepository.findByUsername(username).orElseThrow(() -> new EntityNotFoundException("Kullanıcı adı bulunamadı, lütfen kontrol ediniz ."));
+        return accountRepository.findByUsername(username).orElseThrow(() -> new EntityNotFoundException(Translator.toLocale("account.EntityNotFoundException")));
     }
 
     @Override
@@ -119,7 +120,7 @@ public class AccountManager implements AccountService {
 
     @Override
     public Account findById(Long id) {
-        return accountRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Kullanıcı bulunamadı."));
+        return accountRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(Translator.toLocale("account.EntityNotFoundException")));
     }
 
 

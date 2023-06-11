@@ -17,19 +17,19 @@ import java.util.List;
 @RestController
 @RequestMapping("product")
 @RequiredArgsConstructor
-@OnlyAdmin
 public class ProductController {
     private final ProductService productService;
-
+    @OnlyAdmin
     @PostMapping
     public ProductResponse save( @Valid @RequestBody SaveProductRequest saveProductRequest){
         return productService.save(saveProductRequest);
     }
-
+    @OnlyAdmin
     @PutMapping("/{id}")
     public ProductResponse update(@PathVariable Long id, @Valid  @RequestBody   UpdateProductRequest updateProductRequest){
         return productService.update(id,updateProductRequest);
     }
+    @OnlyAdmin
     @DeleteMapping("/{id}")
     public ProductResponse delete(@PathVariable Long id){
         return productService.delete(id);
@@ -42,12 +42,11 @@ public class ProductController {
     public Page<ProductResponse> getFilter(@RequestParam String title,@RequestParam List<Long> categoryIds,Pageable pageable){
         return productService.getFilter(title,categoryIds,pageable);
     }
-    @IsAuthenticated
+
     @GetMapping("/pageable")
     public Page<ProductResponse> getAll(Pageable pageable){
         return productService.getAll(pageable);
     }
-    @IsAuthenticated
     @GetMapping()
     public List<ProductResponse> getAll(){
         return productService.getAll();

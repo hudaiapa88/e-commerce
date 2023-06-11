@@ -1,6 +1,7 @@
 package com.uc.ecommerce.service;
 
 import com.uc.ecommerce.core.exception.EntityNotFoundException;
+import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.core.security.SecurityContextUtil;
 import com.uc.ecommerce.model.dto.order.OrderResponse;
 import com.uc.ecommerce.model.dto.order.SaveOrderRequest;
@@ -54,7 +55,7 @@ public class OrderManager implements OrderService {
     }
 
     private Order findById(Long id) {
-        return orderRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Sipariş bulunamadı."));
+        return orderRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(Translator.toLocale("order.EntityNotFoundException")));
     }
     @Transactional
     @Override
@@ -79,7 +80,7 @@ public class OrderManager implements OrderService {
 
     @Override
     public List<OrderResponse> getAll() {
-        return null;
+        return orderResponseMapper.entityListToDtoList(orderRepository.findAll()) ;
     }
     @Transactional
     @Override

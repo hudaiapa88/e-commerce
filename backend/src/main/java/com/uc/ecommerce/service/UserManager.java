@@ -2,6 +2,7 @@ package com.uc.ecommerce.service;
 
 import com.uc.ecommerce.core.exception.EntityNotFoundException;
 import com.uc.ecommerce.core.generator.CodeGenerator;
+import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.model.dto.account.SaveUserRequest;
 import com.uc.ecommerce.model.dto.account.UpdateUserRequest;
 import com.uc.ecommerce.model.dto.account.UserResponse;
@@ -15,6 +16,8 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -71,7 +74,7 @@ public class UserManager implements UserService {
 
     @Override
     public User findByUsername(String username) {
-        return userRepository.findByUsername(username).orElseThrow(()->new EntityNotFoundException("Kullanıcı adı bulunamadı"));
+        return userRepository.findByUsername(username).orElseThrow(()->new EntityNotFoundException(Translator.toLocale("user.EntityNotFoundException")));
     }
 
     @Override
@@ -81,7 +84,7 @@ public class UserManager implements UserService {
 
     @Override
     public User findById(Long id) {
-        return userRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Kullanıcı bulunamadı"));
+        return userRepository.findById(id).orElseThrow(()->new EntityNotFoundException(Translator.toLocale("user.id.EntityNotFoundException")));
     }
     @Transactional
     @Override
@@ -90,5 +93,10 @@ public class UserManager implements UserService {
         accountLogService.deleteByAccount_IdAndAccountLogType(id, AccountLogType.WRONG_ENTRY);
         user.setIsActive(Boolean.TRUE);
 
+    }
+
+    @Override
+    public List<UserResponse> getAll() {
+        return userResponseMapper.entityListToDtoList(userRepository.findAll());
     }
 }

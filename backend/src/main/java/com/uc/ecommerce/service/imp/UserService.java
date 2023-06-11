@@ -5,6 +5,8 @@ import com.uc.ecommerce.model.dto.account.UpdateUserRequest;
 import com.uc.ecommerce.model.dto.account.UserResponse;
 import com.uc.ecommerce.model.entity.account.User;
 
+import java.util.List;
+
 public interface UserService {
     UserResponse save(SaveUserRequest saveUserRequest);
     UserResponse update(Long id, UpdateUserRequest updateUserRequest);
@@ -15,4 +17,6 @@ public interface UserService {
     User findById(Long id);
 
     void active(Long id);
+
+    List<UserResponse> getAll();
 }

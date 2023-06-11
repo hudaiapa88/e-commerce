@@ -1,6 +1,7 @@
 package com.uc.ecommerce.controller.photo;
 
 import com.uc.ecommerce.core.security.annotation.IsAuthenticated;
+import com.uc.ecommerce.core.security.annotation.PermitAll;
 import com.uc.ecommerce.service.imp.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.InputStreamResource;
@@ -25,6 +26,7 @@ public class PhotoController {
         photoService.upload(productId,data);
     }
 
+    @PermitAll
     @GetMapping(value = "/product/{productId}", produces = MediaType.ALL_VALUE)
     public ResponseEntity getData(@PathVariable Long productId) throws SQLException {
         InputStream inputStream = photoService.getData(productId).getBinaryStream();

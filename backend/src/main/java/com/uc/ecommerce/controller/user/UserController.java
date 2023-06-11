@@ -9,6 +9,8 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("user")
 @RequiredArgsConstructor
@@ -27,6 +29,16 @@ public class UserController {
     @GetMapping("/{id}/active")
     public void activeUser(@PathVariable Long id){
         userService.active(id);
+    }
+    @OnlyAdmin
+    @GetMapping
+    public List<UserResponse> getAll(){
+        return userService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public UserResponse getById(@PathVariable Long id){
+        return userService.getById(id);
     }
 
 }

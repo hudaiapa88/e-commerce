@@ -12,7 +12,7 @@ import lombok.Setter;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE )
 @DiscriminatorColumn(name = "role", discriminatorType = DiscriminatorType.STRING)
-@Table(uniqueConstraints = {@UniqueConstraint(name = "UK_User_Phone", columnNames = {"phone_areaCode", "phone_number"})})
+//@Table(uniqueConstraints = {@UniqueConstraint(name = "UK_User_Phone", columnNames = {"phone_areaCode", "phone_number"})})
 public class Account extends AbstractTimestampEntity {
     private String firstName;
     private String lastName;

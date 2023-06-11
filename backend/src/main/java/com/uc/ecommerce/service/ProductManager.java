@@ -1,6 +1,7 @@
 package com.uc.ecommerce.service;
 
 import com.uc.ecommerce.core.exception.EntityNotFoundException;
+import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.model.dto.product.ProductResponse;
 import com.uc.ecommerce.model.dto.product.SaveProductRequest;
 import com.uc.ecommerce.model.dto.product.UpdateProductRequest;
@@ -45,7 +46,7 @@ public class ProductManager implements ProductService {
     }
     @Override
     public Product findById(Long id) {
-        return productRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Ürün bulunamadı."));
+        return productRepository.findById(id).orElseThrow(()-> new EntityNotFoundException(Translator.toLocale("product.EntityNotFoundException")));
     }
 
     @Transactional

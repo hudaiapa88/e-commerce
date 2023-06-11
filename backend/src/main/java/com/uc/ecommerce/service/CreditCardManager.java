@@ -1,6 +1,7 @@
 package com.uc.ecommerce.service;
 
 import com.uc.ecommerce.core.exception.EntityNotFoundException;
+import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.core.security.SecurityContextUtil;
 import com.uc.ecommerce.model.dto.card.CreditCardResponse;
 import com.uc.ecommerce.model.dto.card.SaveCreditCardRequest;
@@ -62,7 +63,7 @@ public class CreditCardManager implements CreditCardService {
     }
     @Override
     public CreditCard findById(Long id) {
-        return creditCardRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Kredi katı bulunamadı."));
+        return creditCardRepository.findById(id).orElseThrow(()->new EntityNotFoundException(Translator.toLocale("card.EntityNotFoundException")));
     }
 
     @Transactional
