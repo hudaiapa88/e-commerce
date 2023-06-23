@@ -1,0 +1,4 @@
+
+*.log
+backend/logs/error.log
+*.log

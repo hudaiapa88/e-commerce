@@ -1,19 +1,30 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import OptionFilter from "../../molecules/OptionFilter";
-import { Product } from "../../../types/Product";
-import { FilterState, changeSort } from "../../../redux/slices/filter";
+import { FilterState, changeSort, changeCategory } from "../../../redux/slices/filter";
 import { useAppDispatch } from "../../../redux/store";
 import { useTranslation } from "react-i18next";
+import SelectFilter from "../../molecules/SelectFilter";
+import { getCategorysRequest } from "../../../api/controllers/category";
 
 interface Props {
-  products: Product[];
   filterData: FilterState;
 }
 
-function FilterSidebar({ products, filterData }: Props) {
+function FilterSidebar({ filterData }: Props) {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const [categories, setCategories] = useState([]);
+
+  const getCategories = async () => {
+    await getCategorysRequest().then(res => setCategories(res.data))
+  }
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
+
   return (
     <Grid component="aside" container spacing={4}>
       <Grid item xs={12}>
@@ -29,6 +40,16 @@ function FilterSidebar({ products, filterData }: Props) {
             "Price low to High",
           ]}
           value={filterData.sort}
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <SelectFilter
+          title={t("Categories")}
+          onChange={(e) => {
+            dispatch(changeCategory(e));
+          }}
+          options={categories}
+          checked={filterData.category}
         />
       </Grid>
     </Grid>

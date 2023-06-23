@@ -1,16 +1,23 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Category } from "../../types/Product";
 
 export interface FilterState {
   sort: string;
-  brand: string[];
-  model: string[];
+  category: Category[];
+  pageable: {
+    page: number,
+    size: number
+  }
   search: string;
 }
 
 const initialState: FilterState = {
   sort: "Old to new",
-  brand: [],
-  model: [],
+  category: [],
+  pageable: {
+    page: 0,
+    size: 12
+  },
   search: "",
 };
 
@@ -21,25 +28,18 @@ export const filterSlice = createSlice({
     changeSort: (state, action: PayloadAction<string>) => {
       state.sort = action.payload;
     },
-    changeBrand: (state, action: PayloadAction<string>) => {
-      const has = state.brand.some((v) => v === action.payload);
+    changeCategory: (state, action: PayloadAction<Category>) => {
+      const has = state.category.some((v) => v.id === action.payload.id);
       if (has) {
-        const newList = state.brand.filter((v) => v !== action.payload);
-        state.brand = newList;
+        const newList = state.category.filter((v) => v.id !== action.payload.id);
+        state.category = newList;
       } else {
-        const newList = [...state.brand, action.payload];
-        state.brand = newList;
+        const newList = [...state.category, action.payload];
+        state.category = newList;
       }
     },
-    changeModel: (state, action: PayloadAction<string>) => {
-      const has = state.model.some((v) => v === action.payload);
-      if (has) {
-        const newList = state.model.filter((v) => v !== action.payload);
-        state.model = newList;
-      } else {
-        const newList = [...state.model, action.payload];
-        state.model = newList;
-      }
+    changePageable: (state, action: PayloadAction<number>) => {
+      state.pageable.page = action.payload;
     },
     changeSearch: (state, action: PayloadAction<string>) => {
       state.search = action.payload;
@@ -47,7 +47,7 @@ export const filterSlice = createSlice({
   },
 });
 
-export const { changeSort, changeBrand, changeModel, changeSearch } =
+export const { changeSort, changeCategory, changePageable, changeSearch } =
   filterSlice.actions;
 
 export default filterSlice.reducer;

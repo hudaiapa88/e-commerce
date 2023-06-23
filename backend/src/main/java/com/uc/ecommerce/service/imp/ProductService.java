@@ -27,4 +27,7 @@ public interface ProductService {
     void outOfStock(Product product, Integer quantity);
 
     Page<ProductResponse> getFilter(String title, List<Long> categoryIds, Pageable pageable);
+
+
+    List<ProductResponse> getByQuery(String query);
 }

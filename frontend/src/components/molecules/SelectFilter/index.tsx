@@ -11,17 +11,18 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { Search } from "@mui/icons-material";
+import { Category } from "../../../types/Product";
 
 interface Props {
   title: string;
-  options: string[];
-  checked: string[];
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  options: Category[];
+  checked: Category[];
+  onChange: (item: Category) => void;
 }
 function SelectFilter({ title, options, checked, onChange }: Props) {
   const [filter, setFilter] = useState("");
   const data = options.filter((v) =>
-    v.toLocaleUpperCase().includes(filter.toLocaleUpperCase())
+    v.title.toLocaleUpperCase().includes(filter.toLocaleUpperCase())
   );
   return (
     <Stack spacing={1}>
@@ -51,13 +52,13 @@ function SelectFilter({ title, options, checked, onChange }: Props) {
                   key={i}
                   control={
                     <Checkbox
-                      checked={checked.some((c) => v === c)}
-                      onChange={onChange}
-                      name={v}
+                      checked={checked.some((c) => v.id === c.id)}
+                      onChange={()=> onChange(v)}
+                      value={v.id}
                     />
                   }
-                  label={v}
-                />
+                  label={v.title}
+                 />
               ))}
             </FormGroup>
           </FormControl>
