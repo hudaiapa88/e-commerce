@@ -16,4 +16,5 @@ public class SaveCreditCardRequest {
     @Pattern(regexp = "^[0-9]*$",message = "{constraint.card.cvv2.Pattern.message}")
     @Size(min=3,max = 3,message ="{constraint.card.cvv2.Size.message}" )
     private String cvv2;
+    private Long userId;
 }

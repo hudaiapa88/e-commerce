@@ -12,6 +12,7 @@ import com.uc.ecommerce.model.entity.order.Order;
 import com.uc.ecommerce.model.enums.OrderStatus;
 import com.uc.ecommerce.model.mapper.OrderResponseMapper;
 import com.uc.ecommerce.repository.order.OrderRepository;
+import com.uc.ecommerce.service.events.CreditCardProducer;
 import com.uc.ecommerce.service.imp.*;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -33,6 +34,7 @@ public class OrderManager implements OrderService {
     private final OrderEmailService orderEmailService;
     private final CreditCardService creditCardService;
     private final BankService bankService;
+    private final CreditCardProducer creditCardProducer;
     @Transactional
     @Override
     public OrderResponse save(SaveOrderRequest saveOrderRequest, Boolean isSaveCard) {
@@ -40,7 +42,8 @@ public class OrderManager implements OrderService {
         User user= securityContextUtil.getUser();
         CreditCard creditCard=creditCardService.create(saveOrderRequest.getSaveCreditCardRequest());
         if(isSaveCard){
-           creditCard=creditCardService.save(creditCard);
+            saveOrderRequest.getSaveCreditCardRequest().setUserId(user.getId());
+            creditCardProducer.publish(saveOrderRequest.getSaveCreditCardRequest());
         }
         order.setUser(user);
         order.setAddress(saveOrderRequest.getAddress());

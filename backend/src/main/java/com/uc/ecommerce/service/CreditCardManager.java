@@ -11,6 +11,7 @@ import com.uc.ecommerce.model.entity.card.CreditCard;
 import com.uc.ecommerce.model.mapper.CreditCardResponseMapper;
 import com.uc.ecommerce.repository.CreditCardRepository;
 import com.uc.ecommerce.service.imp.CreditCardService;
+import com.uc.ecommerce.service.imp.UserService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,11 +25,12 @@ public class CreditCardManager implements CreditCardService {
     private final CreditCardRepository creditCardRepository;
     private final SecurityContextUtil securityContextUtil;
     private final CreditCardResponseMapper creditCardResponseMapper;
+    private final UserService userService;
 
     @Transactional
     @Override
     public CreditCardResponse save(SaveCreditCardRequest saveCreditCardRequest) {
-        User user= securityContextUtil.getUser();
+        User user= userService.findById(saveCreditCardRequest.getUserId());
         CreditCard card= new CreditCard();
         card.setNo(saveCreditCardRequest.getNo());
         card.setDate(saveCreditCardRequest.getDate());
