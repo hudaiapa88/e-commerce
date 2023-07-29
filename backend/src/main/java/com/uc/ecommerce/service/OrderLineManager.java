@@ -1,7 +1,7 @@
 package com.uc.ecommerce.service;
 
 import com.uc.ecommerce.model.dto.order.OrderLineResponse;
-import com.uc.ecommerce.model.dto.order.SaveOrderLineRequest;
+import com.uc.ecommerce.model.dto.order.CreateOrderLineRequest;
 import com.uc.ecommerce.model.dto.order.UpdateOrderLineRequest;
 import com.uc.ecommerce.model.entity.order.Order;
 import com.uc.ecommerce.model.entity.order.OrderLine;
@@ -30,28 +30,23 @@ public class OrderLineManager implements OrderLineService {
     private final OrderService orderService;
     @Transactional
     @Override
-    public List<OrderLineResponse> save(Long orderId, List<SaveOrderLineRequest> saveOrderLinesRequest) {
+    public List<OrderLineResponse> save(Long orderId, List<CreateOrderLineRequest> saveOrderLinesRequest) {
         return null;
     }
     @Transactional
     @Override
-    public List<OrderLine> save(Order order, List<SaveOrderLineRequest> saveOrderLinesRequest) {
-       return saveOrderLinesRequest.stream().map((saveOrderLineRequest) -> {
-           return save(order,saveOrderLineRequest);
+    public List<OrderLine> save(Order order, List<CreateOrderLineRequest> saveOrderLinesRequest) {
+       return saveOrderLinesRequest.stream().map((createOrderLineRequest) -> {
+           return save(order, createOrderLineRequest);
         }).collect(Collectors.toList());
     }
     @Transactional
     @Override
-    public OrderLine save(Order order, SaveOrderLineRequest saveOrderLineRequest) {
-        Product product=productService.findById(saveOrderLineRequest.getProductId());
-        OrderLine orderLine = new OrderLine();
-        orderLine.setOrder(order);
-        orderLine.setProduct(product);
-        orderLine.setQuantity(saveOrderLineRequest.getQuantity());
-        BigDecimal totalPrice=new BigDecimal(saveOrderLineRequest.getQuantity()).multiply(product.getPrice());
-        orderLine.setTotalPrice(totalPrice);
-        productService.outOfStock(product,saveOrderLineRequest.getQuantity());
-        orderService.addOrderLinePrice(order,totalPrice);
+    public OrderLine save(Order order, CreateOrderLineRequest createOrderLineRequest) {
+        Product product=productService.findById(createOrderLineRequest.getProductId());
+        OrderLine orderLine= OrderLine.create(createOrderLineRequest,order,product);
+        productService.outOfStock(product, createOrderLineRequest.getQuantity());
+        orderService.addOrderLinePrice(order,orderLine.getTotalPrice());
        return orderLineRepository.save(orderLine);
     }
 

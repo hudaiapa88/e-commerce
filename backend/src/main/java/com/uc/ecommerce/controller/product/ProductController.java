@@ -1,9 +1,8 @@
 package com.uc.ecommerce.controller.product;
 
-import com.uc.ecommerce.core.security.annotation.IsAuthenticated;
 import com.uc.ecommerce.core.security.annotation.OnlyAdmin;
 import com.uc.ecommerce.model.dto.product.ProductResponse;
-import com.uc.ecommerce.model.dto.product.SaveProductRequest;
+import com.uc.ecommerce.model.dto.product.CreateProductRequest;
 import com.uc.ecommerce.model.dto.product.UpdateProductRequest;
 import com.uc.ecommerce.service.imp.ProductService;
 import jakarta.validation.Valid;
@@ -16,7 +15,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -27,8 +25,8 @@ public class ProductController {
     @OnlyAdmin
     @Caching(evict= { @CacheEvict(value= "products", allEntries= true) })
     @PostMapping
-    public ProductResponse save( @Valid @RequestBody SaveProductRequest saveProductRequest){
-        return productService.save(saveProductRequest);
+    public ProductResponse save( @Valid @RequestBody CreateProductRequest createProductRequest){
+        return productService.save(createProductRequest);
     }
     @OnlyAdmin
     @PutMapping("/{id}")

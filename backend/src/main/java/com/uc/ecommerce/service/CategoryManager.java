@@ -4,7 +4,7 @@ package com.uc.ecommerce.service;
 import com.uc.ecommerce.core.exception.EntityNotFoundException;
 import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.model.dto.category.CategoryResponse;
-import com.uc.ecommerce.model.dto.category.SaveCategoryRequest;
+import com.uc.ecommerce.model.dto.category.CreateCategoryRequest;
 import com.uc.ecommerce.model.dto.category.UpdateCategoryRequest;
 import com.uc.ecommerce.model.entity.category.Category;
 import com.uc.ecommerce.model.mapper.CategoryResponseMapper;
@@ -29,14 +29,14 @@ public class CategoryManager implements CategoryService {
     }
     @Transactional
     @Override
-    public CategoryResponse saveParent(SaveCategoryRequest saveCategoryRequest) {
-        return categoryResponseMapper.entityToDto(categoryRepository.save(Category.createParent(saveCategoryRequest)));
+    public CategoryResponse saveParent(CreateCategoryRequest createCategoryRequest) {
+        return categoryResponseMapper.entityToDto(categoryRepository.save(Category.createParent(createCategoryRequest)));
     }
     @Transactional
     @Override
-    public CategoryResponse saveSub(Long parentId, SaveCategoryRequest saveCategoryRequest) {
+    public CategoryResponse saveSub(Long parentId, CreateCategoryRequest createCategoryRequest) {
         Category parentCategory=findById(parentId);
-        return categoryResponseMapper.entityToDto(categoryRepository.save(Category.createSub(parentCategory,saveCategoryRequest) ));
+        return categoryResponseMapper.entityToDto(categoryRepository.save(Category.createSub(parentCategory, createCategoryRequest) ));
     }
     @Override
     public Category findById(Long id) {

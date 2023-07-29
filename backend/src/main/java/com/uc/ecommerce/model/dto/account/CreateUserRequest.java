@@ -13,7 +13,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SaveUserRequest {
+public class CreateUserRequest {
     @NotEmpty(message = "{constraint.register.firstName.Empty.message}")
     @Size(min = 2,max = 40,message = "{constraint.register.firstName.Size.message}")
     @Pattern(regexp = "^[a-zA-ZçÇğĞöÖşŞüÜİı ]*$",message = "{constraint.register.firstName.Pattern.message}")

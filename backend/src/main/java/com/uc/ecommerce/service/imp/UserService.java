@@ -1,6 +1,6 @@
 package com.uc.ecommerce.service.imp;
 
-import com.uc.ecommerce.model.dto.account.SaveUserRequest;
+import com.uc.ecommerce.model.dto.account.CreateUserRequest;
 import com.uc.ecommerce.model.dto.account.UpdateUserRequest;
 import com.uc.ecommerce.model.dto.account.UserResponse;
 import com.uc.ecommerce.model.entity.account.User;
@@ -8,7 +8,7 @@ import com.uc.ecommerce.model.entity.account.User;
 import java.util.List;
 
 public interface UserService {
-    UserResponse save(SaveUserRequest saveUserRequest);
+    UserResponse save(CreateUserRequest createUserRequest);
     UserResponse update(Long id, UpdateUserRequest updateUserRequest);
     void delete(Long id);
     UserResponse getByUsername(String username);

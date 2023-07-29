@@ -1,7 +1,7 @@
 package com.uc.ecommerce.controller.card;
 
 import com.uc.ecommerce.model.dto.card.CreditCardResponse;
-import com.uc.ecommerce.model.dto.card.SaveCreditCardRequest;
+import com.uc.ecommerce.model.dto.card.CreateCreditCardRequest;
 import com.uc.ecommerce.model.dto.card.UpdateCreditCardRequest;
 import com.uc.ecommerce.service.imp.CreditCardService;
 import jakarta.validation.Valid;
@@ -17,8 +17,8 @@ public class CreditCartController {
     private final CreditCardService creditCardService;
 
     @PostMapping("/user/my")
-    public CreditCardResponse save(@Valid  @RequestBody SaveCreditCardRequest saveCreditCardRequest){
-        return creditCardService.save(saveCreditCardRequest);
+    public CreditCardResponse save(@Valid  @RequestBody CreateCreditCardRequest createCreditCardRequest){
+        return creditCardService.save(createCreditCardRequest);
     }
 
     @PutMapping("/{id}")

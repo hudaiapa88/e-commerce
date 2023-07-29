@@ -4,3 +4,4 @@ backend/logs/error.log
 *.log
 backend/logs/error.log
 *.log
+*.log

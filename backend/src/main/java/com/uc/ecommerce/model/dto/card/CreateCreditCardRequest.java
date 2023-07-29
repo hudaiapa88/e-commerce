@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.CreditCardNumber;
 
 @Getter
 @Setter
-public class SaveCreditCardRequest {
+public class CreateCreditCardRequest {
     @CreditCardNumber(message ="{constraint.card.no.CreditCardNumber.message}")
     private String no;
     private String date;

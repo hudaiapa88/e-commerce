@@ -4,7 +4,7 @@ import com.uc.ecommerce.core.exception.EntityNotFoundException;
 import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.core.security.SecurityContextUtil;
 import com.uc.ecommerce.model.dto.card.CreditCardResponse;
-import com.uc.ecommerce.model.dto.card.SaveCreditCardRequest;
+import com.uc.ecommerce.model.dto.card.CreateCreditCardRequest;
 import com.uc.ecommerce.model.dto.card.UpdateCreditCardRequest;
 import com.uc.ecommerce.model.entity.account.User;
 import com.uc.ecommerce.model.entity.card.CreditCard;
@@ -29,39 +29,25 @@ public class CreditCardManager implements CreditCardService {
 
     @Transactional
     @Override
-    public CreditCardResponse save(SaveCreditCardRequest saveCreditCardRequest) {
-        User user= userService.findById(saveCreditCardRequest.getUserId());
-        CreditCard card= new CreditCard();
-        card.setNo(saveCreditCardRequest.getNo());
-        card.setDate(saveCreditCardRequest.getDate());
-        card.setCvv2(saveCreditCardRequest.getCvv2());
-        card.setUser(user);
-        return creditCardResponseMapper.entityToDto(creditCardRepository.save(card));
+    public CreditCardResponse save(CreateCreditCardRequest createCreditCardRequest) {
+        User user= userService.findById(createCreditCardRequest.getUserId());
+        return creditCardResponseMapper.entityToDto(creditCardRepository.save(CreditCard.create(createCreditCardRequest,user)));
     }
     @Override
-    public CreditCard create(SaveCreditCardRequest saveCreditCardRequest) {
+    public CreditCard create(CreateCreditCardRequest createCreditCardRequest) {
         User user= securityContextUtil.getUser();
-        CreditCard card= new CreditCard();
-        card.setNo(saveCreditCardRequest.getNo());
-        card.setDate(saveCreditCardRequest.getDate());
-        card.setCvv2(saveCreditCardRequest.getCvv2());
-        card.setUser(user);
-        return card;
+        return CreditCard.create(createCreditCardRequest,user);
     }
     @Transactional
     @Override
     public CreditCard save(CreditCard card) {
-
         return creditCardRepository.save(card);
     }
     @Transactional
     @Override
     public CreditCardResponse update(Long id, UpdateCreditCardRequest updateCreditCardRequest) {
         CreditCard card= findById(id);
-        card.setNo(updateCreditCardRequest.getNo());
-        card.setDate(updateCreditCardRequest.getDate());
-        card.setCvv2(updateCreditCardRequest.getCvv2());
-        return creditCardResponseMapper.entityToDto(creditCardRepository.save(card));
+        return creditCardResponseMapper.entityToDto(creditCardRepository.save(card.update(updateCreditCardRequest)));
     }
     @Override
     public CreditCard findById(Long id) {

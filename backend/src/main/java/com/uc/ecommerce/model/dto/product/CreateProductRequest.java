@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class SaveProductRequest {
+public class CreateProductRequest {
     @NotEmpty(message = "{constraint.common.Empty.message}")
     @Size(max = 255,message = "{constraint.common.Size.message}")
     private String title;

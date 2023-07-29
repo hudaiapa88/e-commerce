@@ -3,7 +3,7 @@ package com.uc.ecommerce.service;
 import com.uc.ecommerce.core.exception.EntityNotFoundException;
 import com.uc.ecommerce.core.generator.CodeGenerator;
 import com.uc.ecommerce.core.i18n.Translator;
-import com.uc.ecommerce.model.dto.account.SaveUserRequest;
+import com.uc.ecommerce.model.dto.account.CreateUserRequest;
 import com.uc.ecommerce.model.dto.account.UpdateUserRequest;
 import com.uc.ecommerce.model.dto.account.UserResponse;
 import com.uc.ecommerce.model.entity.account.User;
@@ -32,17 +32,8 @@ public class UserManager implements UserService {
 
     @Transactional
     @Override
-    public UserResponse save(SaveUserRequest saveUserRequest) {
-        User user = new User();
-        user.setAddress(saveUserRequest.getAddress());
-        user.setFirstName(saveUserRequest.getFirstName());
-        user.setLastName(saveUserRequest.getLastName());
-        user.setUsername(saveUserRequest.getEmail());
-        user.setPassword(encoder.encode(saveUserRequest.getPassword()));
-        user.setPhone(saveUserRequest.getPhone());
-        user.setEmail(saveUserRequest.getEmail());
-        user.setVerificationCode(codeGenerator.generate());
-        user=userRepository.save(user);
+    public UserResponse save(CreateUserRequest createUserRequest) {
+       User user=userRepository.save(User.create(createUserRequest,encoder.encode(createUserRequest.getPassword()),codeGenerator.generate()));
         accountEmailManager.sendEmailToAdminForNewUser(user);
         return userResponseMapper.entityToDto(user);
 
@@ -52,13 +43,7 @@ public class UserManager implements UserService {
     @Override
     public UserResponse update(Long id, UpdateUserRequest updateUserRequest) {
         User user = findById(id);
-        user.setAddress(updateUserRequest.getAddress());
-        user.setFirstName(updateUserRequest.getFirstName());
-        user.setLastName(updateUserRequest.getLastName());
-        user.setUsername(updateUserRequest.getEmail());
-        user.setPhone(updateUserRequest.getPhone());
-        user.setEmail(updateUserRequest.getEmail());
-        return userResponseMapper.entityToDto(userRepository.save(user));
+        return userResponseMapper.entityToDto(userRepository.save(user.update(updateUserRequest)));
     }
 
     @Transactional
@@ -91,8 +76,7 @@ public class UserManager implements UserService {
     public void active(Long id) {
         User user= findById(id);
         accountLogService.deleteByAccount_IdAndAccountLogType(id, AccountLogType.WRONG_ENTRY);
-        user.setIsActive(Boolean.TRUE);
-
+        userRepository.save(user.active());
     }
 
     @Override

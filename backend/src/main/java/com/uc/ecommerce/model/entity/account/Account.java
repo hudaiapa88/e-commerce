@@ -29,5 +29,8 @@ public class Account extends AbstractTimestampEntity {
     private Boolean isActive ;
 
 
-
+    public Account disableAccount() {
+        this.setIsActive(Boolean.FALSE);
+        return this;
+    }
 }

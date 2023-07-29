@@ -1,7 +1,7 @@
 package com.uc.ecommerce.model.entity.category;
 
 
-import com.uc.ecommerce.model.dto.category.SaveCategoryRequest;
+import com.uc.ecommerce.model.dto.category.CreateCategoryRequest;
 import com.uc.ecommerce.model.dto.category.UpdateCategoryRequest;
 import com.uc.ecommerce.model.entity.base.BaseEntity;
 import jakarta.persistence.Entity;
@@ -18,15 +18,15 @@ public class Category extends BaseEntity {
     @ManyToOne
     private Category parent;
 
-    public static Category createParent(SaveCategoryRequest saveCategoryRequest) {
+    public static Category createParent(CreateCategoryRequest createCategoryRequest) {
         Category category= new Category();
-        category.setTitle(saveCategoryRequest.getTitle());
+        category.setTitle(createCategoryRequest.getTitle());
         return category;
     }
 
-    public static Category createSub(Category parentCategory, SaveCategoryRequest saveCategoryRequest) {
+    public static Category createSub(Category parentCategory, CreateCategoryRequest createCategoryRequest) {
         Category category= new Category();
-        category.setTitle(saveCategoryRequest.getTitle());
+        category.setTitle(createCategoryRequest.getTitle());
         category.setParent(parentCategory);
         return category;
     }

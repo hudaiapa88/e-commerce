@@ -4,7 +4,7 @@ import com.uc.ecommerce.core.exception.EntityNotFoundException;
 import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.core.security.SecurityContextUtil;
 import com.uc.ecommerce.model.dto.order.OrderResponse;
-import com.uc.ecommerce.model.dto.order.SaveOrderRequest;
+import com.uc.ecommerce.model.dto.order.CreateOrderRequest;
 import com.uc.ecommerce.model.dto.order.UpdateOrderRequest;
 import com.uc.ecommerce.model.entity.account.User;
 import com.uc.ecommerce.model.entity.card.CreditCard;
@@ -37,20 +37,16 @@ public class OrderManager implements OrderService {
     private final CreditCardProducer creditCardProducer;
     @Transactional
     @Override
-    public OrderResponse save(SaveOrderRequest saveOrderRequest, Boolean isSaveCard) {
-        Order order = new Order();
+    public OrderResponse save(CreateOrderRequest createOrderRequest, Boolean isSaveCard) {
+
         User user= securityContextUtil.getUser();
-        CreditCard creditCard=creditCardService.create(saveOrderRequest.getSaveCreditCardRequest());
+        CreditCard creditCard=creditCardService.create(createOrderRequest.getCreateCreditCardRequest());
         if(isSaveCard){
-            saveOrderRequest.getSaveCreditCardRequest().setUserId(user.getId());
-            creditCardProducer.publish(saveOrderRequest.getSaveCreditCardRequest());
+            createOrderRequest.getCreateCreditCardRequest().setUserId(user.getId());
+            creditCardProducer.publish(createOrderRequest.getCreateCreditCardRequest());
         }
-        order.setUser(user);
-        order.setAddress(saveOrderRequest.getAddress());
-        order.setTotalPrice(new BigDecimal(0));
-        order.setOrderStatus(OrderStatus.READING);
-        order = orderRepository.save(order);
-        orderLineService.save(order,saveOrderRequest.getOrderLines());
+        Order order  = orderRepository.save(Order.create(createOrderRequest,user));
+        orderLineService.save(order, createOrderRequest.getOrderLines());
         order= findById(order.getId());
         bankService.pay(creditCard,order.getTotalPrice());
         orderEmailService.sendEmailToUserForNewOrder(user);
@@ -88,8 +84,7 @@ public class OrderManager implements OrderService {
     @Transactional
     @Override
     public void addOrderLinePrice(Order order, BigDecimal totalPrice) {
-        order.setTotalPrice(order.getTotalPrice().add(totalPrice));
-        orderRepository.save(order);
+        orderRepository.save(order.addOrderLinePrice(totalPrice));
     }
 
     @Override
@@ -101,7 +96,6 @@ public class OrderManager implements OrderService {
     @Override
     public OrderResponse orderShipIt(Long id) {
         Order order= findById(id);
-        order.setOrderStatus(OrderStatus.SHIPPED);
-        return orderResponseMapper.entityToDto(orderRepository.save(order));
+        return orderResponseMapper.entityToDto( orderRepository.save(order.orderShipIt()));
     }
 }

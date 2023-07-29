@@ -17,4 +17,12 @@ public class AccountLog extends Log{
     private AccountLogType accountLogType;
     @ManyToOne
     private Account account;
+
+    public static AccountLog create(Account account, String title, AccountLogType accountLogType) {
+        AccountLog accountLog= new AccountLog();
+        accountLog.setTitle(title);
+        accountLog.setAccountLogType(accountLogType);
+        accountLog.setAccount(account);
+        return accountLog;
+    }
 }

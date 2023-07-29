@@ -3,7 +3,7 @@ package com.uc.ecommerce.controller.order;
 import com.uc.ecommerce.core.security.annotation.IsAuthenticated;
 import com.uc.ecommerce.core.security.annotation.OnlyAdmin;
 import com.uc.ecommerce.model.dto.order.OrderResponse;
-import com.uc.ecommerce.model.dto.order.SaveOrderRequest;
+import com.uc.ecommerce.model.dto.order.CreateOrderRequest;
 import com.uc.ecommerce.model.dto.order.UpdateOrderRequest;
 import com.uc.ecommerce.service.imp.OrderService;
 import jakarta.validation.Valid;
@@ -22,8 +22,8 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
-    public OrderResponse save(@Valid @RequestBody SaveOrderRequest saveOrderRequest, @RequestParam Boolean isSaveCard){
-        return orderService.save(saveOrderRequest,isSaveCard);
+    public OrderResponse save(@Valid @RequestBody CreateOrderRequest createOrderRequest, @RequestParam Boolean isSaveCard){
+        return orderService.save(createOrderRequest,isSaveCard);
     }
     @OnlyAdmin
     @PutMapping("/{id}/ship-it")

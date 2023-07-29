@@ -4,13 +4,12 @@ package com.uc.ecommerce.controller.category;
 
 import com.uc.ecommerce.core.security.annotation.PermitAll;
 import com.uc.ecommerce.model.dto.category.CategoryResponse;
-import com.uc.ecommerce.model.dto.category.SaveCategoryRequest;
+import com.uc.ecommerce.model.dto.category.CreateCategoryRequest;
 import com.uc.ecommerce.model.dto.category.UpdateCategoryRequest;
 import com.uc.ecommerce.service.CategoryManager;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,13 +31,13 @@ public class CategoryController {
 
     @PostMapping("/parent")
     @ResponseStatus(HttpStatus.CREATED)
-    public CategoryResponse saveParent(@RequestBody @Valid SaveCategoryRequest saveCategoryRequest) {
-        return categoryManger.saveParent(saveCategoryRequest);
+    public CategoryResponse saveParent(@RequestBody @Valid CreateCategoryRequest createCategoryRequest) {
+        return categoryManger.saveParent(createCategoryRequest);
     }
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/parent/{parentId}/sub")
-    public CategoryResponse saveSubCategory(@PathVariable Long parentId, @RequestBody @Valid  SaveCategoryRequest saveCategoryRequest) {
-        return categoryManger.saveSub(parentId, saveCategoryRequest);
+    public CategoryResponse saveSubCategory(@PathVariable Long parentId, @RequestBody @Valid CreateCategoryRequest createCategoryRequest) {
+        return categoryManger.saveSub(parentId, createCategoryRequest);
     }
 
     @GetMapping("/parent")

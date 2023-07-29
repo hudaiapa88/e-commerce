@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SaveCategoryRequest {
+public class CreateCategoryRequest {
     @NotEmpty(message = "{constraint.common.Empty.message}")
     @Size(max = 255,message = "{constraint.common.Size.message}")
     String title;

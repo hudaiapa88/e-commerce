@@ -1,7 +1,7 @@
 package com.uc.ecommerce.service.imp;
 
 import com.uc.ecommerce.model.dto.order.OrderResponse;
-import com.uc.ecommerce.model.dto.order.SaveOrderRequest;
+import com.uc.ecommerce.model.dto.order.CreateOrderRequest;
 import com.uc.ecommerce.model.dto.order.UpdateOrderRequest;
 import com.uc.ecommerce.model.entity.order.Order;
 import org.springframework.data.domain.Page;
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface OrderService {
-    OrderResponse save(SaveOrderRequest saveOrderRequest, Boolean isSaveCard);
+    OrderResponse save(CreateOrderRequest createOrderRequest, Boolean isSaveCard);
 
     OrderResponse update(Long id, UpdateOrderRequest updateOrderRequest);
 

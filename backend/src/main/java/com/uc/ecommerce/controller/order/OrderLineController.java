@@ -4,7 +4,7 @@ import com.uc.ecommerce.core.security.annotation.IsAuthenticated;
 import com.uc.ecommerce.core.security.annotation.OnlyAdmin;
 import com.uc.ecommerce.model.dto.order.OrderLineResponse;
 import com.uc.ecommerce.model.dto.order.UpdateOrderLineRequest;
-import com.uc.ecommerce.model.dto.order.SaveOrderLineRequest;
+import com.uc.ecommerce.model.dto.order.CreateOrderLineRequest;
 import com.uc.ecommerce.service.imp.OrderLineService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class OrderLineController {
     private final OrderLineService orderLineService;
 
     @PostMapping("/order/{orderId}")
-    public List<OrderLineResponse> save(@PathVariable Long orderId, @RequestBody List<SaveOrderLineRequest> saveOrderLinesRequest){
+    public List<OrderLineResponse> save(@PathVariable Long orderId, @RequestBody List<CreateOrderLineRequest> saveOrderLinesRequest){
         return orderLineService.save(orderId,saveOrderLinesRequest);
     }
 

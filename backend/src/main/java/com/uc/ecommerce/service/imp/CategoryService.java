@@ -1,8 +1,7 @@
 package com.uc.ecommerce.service.imp;
 
-import com.uc.ecommerce.core.exception.EntityNotFoundException;
 import com.uc.ecommerce.model.dto.category.CategoryResponse;
-import com.uc.ecommerce.model.dto.category.SaveCategoryRequest;
+import com.uc.ecommerce.model.dto.category.CreateCategoryRequest;
 import com.uc.ecommerce.model.dto.category.UpdateCategoryRequest;
 import com.uc.ecommerce.model.entity.category.Category;
 
@@ -12,9 +11,9 @@ import java.util.Optional;
 public interface CategoryService {
     public List<CategoryResponse> getAll() ;
 
-     CategoryResponse saveParent(SaveCategoryRequest saveCategoryRequest) ;
+     CategoryResponse saveParent(CreateCategoryRequest createCategoryRequest) ;
 
-     CategoryResponse saveSub(Long parentId, SaveCategoryRequest saveCategoryRequest) ;
+     CategoryResponse saveSub(Long parentId, CreateCategoryRequest createCategoryRequest) ;
 
      Category findById(Long id);
 

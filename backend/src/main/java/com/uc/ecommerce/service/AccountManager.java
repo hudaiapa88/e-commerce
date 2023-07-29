@@ -81,8 +81,7 @@ public class AccountManager implements AccountService {
 
     @Override
     public void disableAccount(Account account) {
-        account.setIsActive(Boolean.FALSE);
-        accountRepository.save(account);
+        accountRepository.save(account.disableAccount());
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.uc.ecommerce.service.imp;
 
 import com.uc.ecommerce.model.dto.order.OrderLineResponse;
-import com.uc.ecommerce.model.dto.order.SaveOrderLineRequest;
+import com.uc.ecommerce.model.dto.order.CreateOrderLineRequest;
 import com.uc.ecommerce.model.dto.order.UpdateOrderLineRequest;
 import com.uc.ecommerce.model.entity.order.Order;
 import com.uc.ecommerce.model.entity.order.OrderLine;
@@ -11,10 +11,10 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface OrderLineService {
-     List<OrderLineResponse> save(Long orderId, List<SaveOrderLineRequest> saveOrderLinesRequest);
-    List<OrderLine> save(Order order,List<SaveOrderLineRequest> saveOrderLinesRequest);
+     List<OrderLineResponse> save(Long orderId, List<CreateOrderLineRequest> saveOrderLinesRequest);
+    List<OrderLine> save(Order order,List<CreateOrderLineRequest> saveOrderLinesRequest);
 
-    OrderLine save(Order order, SaveOrderLineRequest saveOrderLineRequest);
+    OrderLine save(Order order, CreateOrderLineRequest createOrderLineRequest);
 
     OrderLineResponse update(Long id, UpdateOrderLineRequest updateOrderRequest);
 

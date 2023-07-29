@@ -18,11 +18,7 @@ public class AccountLogManager implements AccountLogService {
     @Transactional
     @Override
     public void save(Account account, String title, AccountLogType accountLogType) {
-        AccountLog accountLog= new AccountLog();
-        accountLog.setTitle(title);
-        accountLog.setAccountLogType(accountLogType);
-        accountLog.setAccount(account);
-        accountLogRepository.save(accountLog);
+        accountLogRepository.save(AccountLog.create(account,title,accountLogType));
     }
 
     @Override
