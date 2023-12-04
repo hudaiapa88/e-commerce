@@ -1,7 +1,6 @@
 package com.uc.ecommerce.service.imp;
 
 
-import com.sun.mail.imap.protocol.BODYSTRUCTURE;
 import com.uc.ecommerce.controller.account.LoginRequest;
 import com.uc.ecommerce.controller.account.LoginResponse;
 import com.uc.ecommerce.model.entity.account.Account;

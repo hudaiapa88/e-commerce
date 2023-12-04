@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RandomUtils {
+public class RandomUtility {
     public String randomPhoneNumber(){
         return "+9054"+ RandomStringUtils.randomNumeric(8);
     }

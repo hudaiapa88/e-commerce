@@ -3,6 +3,7 @@ package com.uc.ecommerce.utils;
 import com.uc.ecommerce.model.embedded.Phone;
 import com.uc.ecommerce.model.entity.account.Admin;
 import com.uc.ecommerce.repository.AdminRepository;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -11,6 +12,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Component
+
 public class TestAccountUtility {
     @Autowired
     AdminRepository adminRepository;

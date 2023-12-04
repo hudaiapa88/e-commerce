@@ -117,6 +117,7 @@ public class SecurityContextUtil implements ApplicationContextAware {
     }
 
     public static Optional<HttpServletRequest> getCurrentHttpRequest() {
+
         return Optional.ofNullable(RequestContextHolder.getRequestAttributes())
                 .filter(ServletRequestAttributes.class::isInstance)
                 .map(ServletRequestAttributes.class::cast)
@@ -125,6 +126,7 @@ public class SecurityContextUtil implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+
         SecurityContextUtil.context = context;
     }
 
