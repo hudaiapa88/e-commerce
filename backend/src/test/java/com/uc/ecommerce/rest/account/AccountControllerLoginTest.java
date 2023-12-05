@@ -5,43 +5,37 @@ import com.uc.ecommerce.RequestSpec;
 import com.uc.ecommerce.ResponseSpec;
 import com.uc.ecommerce.controller.account.LoginRequest;
 import com.uc.ecommerce.utils.TestAccountUtility;
-import lombok.extern.slf4j.Slf4j;
+import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-@Slf4j
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+import static io.restassured.RestAssured.*;
+
 public class AccountControllerLoginTest extends PlatformTestWithAuth {
 
     @Autowired
-    TestAccountUtility testAccountUtility;
+    private TestAccountUtility testAccountUtility;
 
     @BeforeEach
-    public void before(){
-        testAccountUtility.createTestAdmin();
+    public void before() {
+        testAccountUtility.getTestAdmin();
     }
 
     @Test
-    void testAdminLogin(){
-        LoginRequest loginRequest= new LoginRequest();
+    void testAdminLogin() {
+        LoginRequest loginRequest = new LoginRequest();
         loginRequest.setUsername("admin");
         loginRequest.setPassword("123456");
-        RequestSpec.given().jsonRequest().body(loginRequest)
-                .when().post(path())
-                .then()
-                .spec(ResponseSpec.isOkResponse());
+        given().contentType(ContentType.JSON)
+                .body(loginRequest).log().all()
+                .when().post(path()).then().log().all().spec(ResponseSpec.isOkResponse());
     }
+
     private String path() {
         return String.format("/account/login");
     }
-
-
-
-
-
 
 
 }

@@ -1,33 +1,30 @@
 package com.uc.ecommerce;
 
+
 import io.restassured.RestAssured;
-import org.junit.jupiter.api.BeforeAll;
+import org.aspectj.lang.annotation.Before;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Optional;
 
-//@RunWith(SpringRunner.class)
-//@ExtendWith(SpringExtension.class)
-//@ContextConfiguration(classes = { SpringTestConfiguration.class })
-//@AutoConfigureMockMvc
-@TestPropertySource(
-		locations = "classpath:application-test.properties")
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @ActiveProfiles("test")
-class PlatformTests {
 
-	@LocalServerPort
-	protected int port;
+@ExtendWith(RestAssuredExtension.class)
+public class PlatformTests {
 
-	@BeforeAll
-	public void before_PlatformTest() {
-		RestAssured.baseURI = RequestSpec.BASE_URI;
-		RestAssured.port = port;
-	}
-
+    @Test
+    void contextLoads() {
+      /*  RestAssured.port = port.orElse(RestAssured.DEFAULT_PORT);
+        RestAssured.baseURI = baseUri.orElse(RestAssured.DEFAULT_URI);
+        RestAssured.rootPath = rootPath.orElse(RestAssured.DEFAULT_PATH);*/
+    }
 }

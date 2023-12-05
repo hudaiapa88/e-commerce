@@ -1,10 +1,10 @@
 name: ecommerce-dev-container
 services:
-  ec-mariadb:
-    container_name: ec-mariadb
+  ec-dev-mariadb:
+    container_name: ec-dev-mariadb
     image: mariadb:10.8
     networks:
-      - ecommerce
+      - ec-dev-ecommerce
     ports:
       - '3306:3306'
     expose:
@@ -14,43 +14,45 @@ services:
       MARIADB_DATABASE: ecommerce
     labels:
       org.springframework.boot.ignore: true
-  cache:
+
+  ec-dev-cache:
+    container_name: ec-dev-cache
     image: 'bitnami/redis:latest'
     networks:
-      - ecommerce
+      - ec-dev-ecommerce
     ports:
       - "6379:6379"
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
       - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
-  ec-zookeeper:
+  ec-dev-zookeeper:
     image: confluentinc/cp-zookeeper:7.0.1
     networks:
-      - ecommerce
-    container_name: ec-zookeeper
+      - ec-dev-ecommerce
+    container_name: ec-dev-zookeeper
     ports:
       - "2181:2181"
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-  ec-broker:
+  ec-dev-broker:
     image: confluentinc/cp-kafka:7.0.1
     networks:
-      - ecommerce
-    container_name: ec-broker
+      - ec-dev-ecommerce
+    container_name: ec-dev-broker
     ports:
       - "9092:9092"
     depends_on:
-      - ec-zookeeper
+      - ec-dev-zookeeper
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: 'ec-zookeeper:2181'
+      KAFKA_ZOOKEEPER_CONNECT: 'ec-dev-zookeeper:2181'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 volumes:
-  ec-mysql:
+  ec-dev-mysql:
 networks:
-  ecommerce:
+  ec-dev-ecommerce:

@@ -3,21 +3,27 @@ package com.uc.ecommerce.utils;
 import com.uc.ecommerce.model.embedded.Phone;
 import com.uc.ecommerce.model.entity.account.Admin;
 import com.uc.ecommerce.repository.AdminRepository;
+import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Import;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Component
-
 public class TestAccountUtility {
     @Autowired
-    AdminRepository adminRepository;
+    private AdminRepository adminRepository;
 
-    public Admin createTestAdmin() {
+    public Admin getTestAdmin() {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         Admin admin = new Admin();
         Long adminCount = adminRepository.count();
