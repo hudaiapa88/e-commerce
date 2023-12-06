@@ -183,3 +183,17 @@
 13:58:21.126 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
 13:58:24.670 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 13:58:29.806 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 37.778 seconds (process running for 41.566)
+14:00:50.244 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:00:50.443 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
+14:00:51.201 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+14:00:51.553 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+14:00:51.628 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 9684 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+14:00:51.631 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
+14:01:14.016 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:01:14.114 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+14:01:14.176 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+14:01:17.136 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+14:01:22.078 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 30.899 seconds (process running for 33.325)
+14:01:24.189 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:01:24.192 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+14:01:24.218 [http-nio-8088-exec-2] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.

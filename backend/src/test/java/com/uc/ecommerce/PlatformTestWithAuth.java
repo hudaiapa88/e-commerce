@@ -17,9 +17,9 @@ public class PlatformTestWithAuth extends PlatformTest {
     @Autowired
     TestAdminUtility testAdminUtility;
     @Getter
-    private TestAdmin admin;
+    private TestAdmin admin= new TestAdmin();
     @Getter
-    private TestUser user;
+    private TestUser user= new TestUser();
     @BeforeEach
     public void before_PlatformTestWithAuthentification() {
         admin.setAccount(testAdminUtility.createAdmin());
