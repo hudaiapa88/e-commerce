@@ -18,7 +18,7 @@ public class PlatformTestWithAuth extends PlatformTests{
 
     @BeforeEach
     public void before_PlatformTestWithAuth(){
-        admin = testAccountUtility.getTestAdmin();
+        admin = testAccountUtility.createAdmin();
     }
 
     public Admin getAdmin() {

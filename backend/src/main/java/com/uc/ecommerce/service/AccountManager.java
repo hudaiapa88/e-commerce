@@ -53,7 +53,7 @@ public class AccountManager implements AccountService {
     public LoginResponse login(LoginRequest loginRequest) {
 
         try {
-            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUserName(), loginRequest.getPassword()));
             CustomAccountDetails customUserDetails = (CustomAccountDetails) authentication.getPrincipal();
             Account currentUser = customUserDetails.getAccount();
             final String token = jwtTokenUtil.generate(customUserDetails, loginRequest.isRememberMe());
@@ -65,7 +65,7 @@ public class AccountManager implements AccountService {
             return new LoginResponse(currentUser.getUsername(), token, currentUser.getRole());
 
         } catch (BadCredentialsException badCredentialsException) {
-            Account account = findByUserName(loginRequest.getUsername());
+            Account account = findByUserName(loginRequest.getUserName());
             if (account instanceof User) {
                 accountLogService.save(account, "Wrong entry", AccountLogType.WRONG_ENTRY);
                 if (wrongEntryValidator.validate(account)) {

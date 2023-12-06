@@ -20,7 +20,7 @@ public class AccountControllerLoginTest extends PlatformTestWithAuth {
 
     @BeforeEach
     public void before() {
-        testAccountUtility.getTestAdmin();
+        testAccountUtility.createAdmin();
     }
 
     @Test

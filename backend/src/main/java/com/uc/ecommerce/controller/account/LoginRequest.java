@@ -10,7 +10,7 @@ public class LoginRequest {
 
     @NotEmpty(message = "{constraint.login.username.Empty.message}")
     @Size( max = 50,message = "{constraint.login.username.Size.message}")
-    private String username;
+    private String userName;
     @Setter
     @NotEmpty(message = "{constraint.login.password.Empty.message}")
     @Size(min = 6, max = 32,message = "{constraint.login.password.Size.message}" )
@@ -19,7 +19,7 @@ public class LoginRequest {
     private boolean rememberMe;
 
     public void setUsername(String username){
-        this.username=username.replaceAll(" ","");
+        this.userName=username.replaceAll(" ","");
     }
 
 }
