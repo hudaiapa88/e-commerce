@@ -1,27 +1,32 @@
 package com.uc.ecommerce;
 
 import com.uc.ecommerce.model.entity.account.Admin;
-import com.uc.ecommerce.utils.TestAccountUtility;
+import com.uc.ecommerce.model.entity.account.User;
+import com.uc.ecommerce.utils.TestAdminUtility;
+import com.uc.ecommerce.utils.TestUserUtility;
+import com.uc.ecommerce.utils.roles.TestAdmin;
+import com.uc.ecommerce.utils.roles.TestUser;
+import lombok.Getter;
+import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-public class PlatformTestWithAuth extends PlatformTests{
-
+public class PlatformTestWithAuth extends PlatformTest {
     @Autowired
-    private TestAccountUtility testAccountUtility ;
-
-    private Admin admin;
-
+    private TestUserUtility testUserUtility;
+    @Autowired
+    TestAdminUtility testAdminUtility;
+    @Getter
+    private TestAdmin admin;
+    @Getter
+    private TestUser user;
     @BeforeEach
-    public void before_PlatformTestWithAuth(){
-        admin = testAccountUtility.createAdmin();
+    public void before_PlatformTestWithAuthentification() {
+        admin.setAccount(testAdminUtility.createAdmin());
+        admin.setToken(testAdminUtility.getTestAdminToken());
+        user.setAccount(testUserUtility.createUser());
+        user.setToken(testAdminUtility.getTestAdminToken());
     }
 
-    public Admin getAdmin() {
-        return admin;
-    }
+
 }
