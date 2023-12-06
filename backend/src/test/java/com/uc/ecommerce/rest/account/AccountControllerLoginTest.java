@@ -1,15 +1,11 @@
 package com.uc.ecommerce.rest.account;
 
-import com.uc.ecommerce.PlatformTest;
 import com.uc.ecommerce.PlatformTestWithAuth;
 import com.uc.ecommerce.ResponseSpec;
 import com.uc.ecommerce.controller.account.LoginRequest;
-import com.uc.ecommerce.utils.TestAdminUtility;
-import com.uc.ecommerce.utils.roles.AdminPool;
+import com.uc.ecommerce.utils.account.roles.AdminPool;
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import static io.restassured.RestAssured.*;
 

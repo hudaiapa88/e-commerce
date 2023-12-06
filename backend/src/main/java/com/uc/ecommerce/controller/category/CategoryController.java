@@ -2,6 +2,7 @@ package com.uc.ecommerce.controller.category;
 
 
 
+import com.uc.ecommerce.core.security.annotation.OnlyAdmin;
 import com.uc.ecommerce.core.security.annotation.PermitAll;
 import com.uc.ecommerce.model.dto.category.CategoryResponse;
 import com.uc.ecommerce.model.dto.category.CreateCategoryRequest;
@@ -30,11 +31,13 @@ public class CategoryController {
     }
 
     @PostMapping("/parent")
+    @OnlyAdmin
     @ResponseStatus(HttpStatus.CREATED)
     public CategoryResponse saveParent(@RequestBody @Valid CreateCategoryRequest createCategoryRequest) {
         return categoryManger.saveParent(createCategoryRequest);
     }
     @ResponseStatus(HttpStatus.CREATED)
+    @OnlyAdmin
     @PostMapping("/parent/{parentId}/sub")
     public CategoryResponse saveSubCategory(@PathVariable Long parentId, @RequestBody @Valid CreateCategoryRequest createCategoryRequest) {
         return categoryManger.saveSub(parentId, createCategoryRequest);
@@ -50,10 +53,12 @@ public class CategoryController {
     }
 
     @PutMapping("/{id}")
+    @OnlyAdmin
     public CategoryResponse update(@PathVariable Long id, @RequestBody @Valid  UpdateCategoryRequest updateCategoryRequest){
         return categoryManger.update(id,updateCategoryRequest);
     }
     @DeleteMapping("/{id}")
+    @OnlyAdmin
     public void delete(@PathVariable Long id){
         categoryManger.delete(id);
     }

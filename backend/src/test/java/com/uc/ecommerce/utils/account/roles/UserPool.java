@@ -1,7 +1,6 @@
-package com.uc.ecommerce.utils.roles;
+package com.uc.ecommerce.utils.account.roles;
 
 import com.uc.ecommerce.model.embedded.Phone;
-import com.uc.ecommerce.model.entity.account.Admin;
 import com.uc.ecommerce.model.entity.account.User;
 
 
