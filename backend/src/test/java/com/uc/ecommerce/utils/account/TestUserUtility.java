@@ -35,8 +35,8 @@ public class TestUserUtility {
         loginRequest.setUsername(UserPool.getUser().getUsername());
         loginRequest.setPassword(UserPool.getUser().getPassword());
         LoginResponse loginResponse = given().contentType(ContentType.JSON)
-                .body(loginRequest).log().all()
-                .when().post(path()).then().log().all().spec(ResponseSpec.isOkResponse())
+                .body(loginRequest)
+                .when().post(path()).then().spec(ResponseSpec.isOkResponse())
                 .extract().body().as(LoginResponse.class);
         return loginResponse.getToken();
     }

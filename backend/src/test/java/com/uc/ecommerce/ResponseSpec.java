@@ -39,4 +39,8 @@ public class ResponseSpec {
         return new ResponseSpecBuilder()
                 .expectStatusCode(HttpStatus.NOT_FOUND.value()).build();
     }
+    public static ResponseSpecification isCreatedResponse() {
+        return new ResponseSpecBuilder()
+                .expectStatusCode(HttpStatus.CREATED.value()).build();
+    }
 }

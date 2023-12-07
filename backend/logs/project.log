@@ -1,272 +1,78 @@
-11:08:18.420 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:08:18.743 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-11:08:19.652 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-11:08:20.063 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-11:08:20.125 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 25244 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-11:08:20.127 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-11:08:58.008 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-11:08:58.126 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-11:08:58.235 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-11:09:01.934 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-11:09:07.612 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 47.985 seconds (process running for 51.439)
-11:09:09.790 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-11:09:09.793 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-11:09:09.839 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-11:21:57.678 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:21:57.909 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-11:21:58.694 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-11:21:59.029 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-11:21:59.162 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 26708 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-11:21:59.164 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-11:22:22.140 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-11:22:22.245 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-11:22:22.307 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-11:22:25.478 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-11:22:30.321 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 31.646 seconds (process running for 34.151)
-11:22:32.067 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-11:22:32.070 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-11:22:32.146 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-11:42:20.571 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:42:20.790 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-11:42:21.536 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-11:42:21.887 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-11:42:21.969 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 5588 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-11:42:21.971 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-11:42:52.040 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-11:42:52.149 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-11:42:52.217 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-11:42:55.621 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-11:43:01.182 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 39.664 seconds (process running for 42.176)
-11:46:23.874 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:46:24.302 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-11:46:25.515 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-11:46:25.909 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-11:46:26.097 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 6124 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-11:46:26.106 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-11:46:50.572 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-11:46:50.666 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-11:46:50.740 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-11:46:54.181 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-11:46:59.864 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 34.371 seconds (process running for 38.772)
-11:47:02.496 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-11:47:02.499 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-11:47:02.531 [http-nio-8088-exec-2] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-11:47:02.560 [http-nio-8088-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
-11:47:55.026 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:47:55.275 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-11:47:56.095 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-11:47:56.475 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-11:47:56.561 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 3336 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-11:47:56.563 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-11:48:20.073 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-11:48:20.184 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-11:48:20.251 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-11:48:24.050 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-11:48:29.591 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 33.515 seconds (process running for 36.263)
-11:48:32.056 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-11:48:32.060 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
-11:48:32.106 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-11:48:32.141 [http-nio-8088-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
-11:50:31.197 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:50:31.428 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-11:50:32.233 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-11:50:32.694 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-11:50:32.772 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 29576 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-11:50:32.773 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-11:50:56.076 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-11:50:56.229 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-11:50:56.360 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-11:51:01.881 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-11:51:12.610 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 40.397 seconds (process running for 43.13)
-11:51:15.627 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-11:51:15.629 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-11:51:15.663 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-11:51:15.690 [http-nio-8088-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
-11:54:03.909 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:54:04.150 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-11:54:04.931 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-11:54:05.309 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-11:54:05.391 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 19240 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-11:54:05.392 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-11:54:29.673 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-11:54:29.785 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-11:54:29.849 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-11:54:33.737 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-11:54:39.408 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 34.497 seconds (process running for 37.214)
-11:55:17.856 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s220ms261µs700ns).
-11:55:19.419 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-11:55:19.426 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
-11:55:19.469 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-11:55:19.527 [http-nio-8088-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
-12:02:44.243 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:02:44.466 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-12:02:45.296 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-12:02:45.654 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-12:02:45.745 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 30992 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-12:02:45.746 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-12:03:10.386 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-12:03:10.493 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-12:03:10.564 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-12:03:14.140 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-12:03:21.833 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 36.555 seconds (process running for 39.318)
-12:03:39.813 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-12:03:39.816 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-12:03:39.859 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-12:03:39.887 [http-nio-8088-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
-12:13:18.665 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:13:18.905 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-12:13:19.684 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-12:13:20.052 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-12:13:20.117 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 8308 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-12:13:20.118 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-12:13:49.796 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-12:13:50.202 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-12:13:50.317 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-12:13:55.490 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-12:14:03.932 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 44.266 seconds (process running for 46.98)
-12:14:10.677 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-12:14:10.681 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
-12:14:10.711 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-12:14:10.729 [http-nio-8088-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
-12:14:38.512 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:14:38.728 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-12:14:39.559 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-12:14:39.935 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-12:14:40.003 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 24328 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-12:14:40.005 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-12:15:04.475 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-12:15:04.622 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-12:15:04.724 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-12:15:08.912 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-12:15:16.941 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 37.402 seconds (process running for 40.674)
-12:15:19.956 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-12:15:19.958 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-12:15:19.985 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-12:15:20.746 [http-nio-8088-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [110] milliseconds.
-12:54:23.048 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:54:23.315 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-12:54:24.150 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-12:54:24.529 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-12:54:24.601 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 15964 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-12:54:24.604 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-12:54:55.321 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-12:54:55.473 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-12:54:55.573 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-12:54:59.220 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-12:55:08.640 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 44.509 seconds (process running for 47.26)
-12:55:12.415 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-12:55:12.418 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-12:55:12.465 [http-nio-8088-exec-2] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-12:55:13.312 [http-nio-8088-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [103] milliseconds.
-13:22:51.139 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-13:22:51.345 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-13:22:52.094 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-13:22:52.416 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-13:22:52.515 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 30752 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-13:22:52.516 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-13:23:15.967 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-13:23:16.067 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-13:23:16.130 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-13:23:19.111 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-13:23:24.129 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 32.053 seconds (process running for 34.432)
-13:23:26.084 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-13:23:26.086 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-13:23:26.115 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-13:57:50.506 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-13:57:50.879 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-13:57:52.055 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-13:57:52.472 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-13:57:52.567 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 1860 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-13:57:52.569 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-13:58:20.973 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-13:58:21.067 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-13:58:21.126 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-13:58:24.670 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-13:58:29.806 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 37.778 seconds (process running for 41.566)
-14:00:50.244 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:00:50.443 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-14:00:51.201 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-14:00:51.553 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-14:00:51.628 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 9684 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-14:00:51.631 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-14:01:14.016 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-14:01:14.114 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-14:01:14.176 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-14:01:17.136 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-14:01:22.078 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 30.899 seconds (process running for 33.325)
-14:01:24.189 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-14:01:24.192 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-14:01:24.218 [http-nio-8088-exec-2] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-14:13:20.081 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:13:20.314 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-14:13:21.041 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-14:13:21.379 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-14:13:21.491 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 5768 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-14:13:21.492 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-14:13:44.950 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-14:13:45.056 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-14:13:45.124 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-14:13:48.377 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-14:13:53.667 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 32.645 seconds (process running for 35.16)
-14:13:55.974 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-14:13:55.977 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-14:13:56.012 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-14:14:21.885 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:14:22.123 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-14:14:22.918 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-14:14:23.254 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-14:14:23.350 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 31740 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-14:14:23.352 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-14:14:48.322 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-14:14:48.442 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-14:14:48.554 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-14:14:52.877 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-14:14:59.711 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 36.811 seconds (process running for 39.426)
-14:15:02.444 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-14:15:02.447 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-14:15:02.480 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-14:15:03.346 [http-nio-8088-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [119] milliseconds.
-14:15:44.577 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54s947ms468µs700ns).
-14:46:00.391 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:46:00.606 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-14:46:01.412 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-14:46:01.741 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-14:46:01.838 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 11956 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-14:46:01.839 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-14:46:24.847 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-14:46:24.961 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-14:46:25.042 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-14:46:28.132 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-14:46:32.726 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 31.332 seconds (process running for 33.925)
-14:46:34.805 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-14:46:34.811 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-14:46:34.837 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-14:51:57.836 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:51:58.145 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-14:51:59.032 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-14:51:59.394 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-14:51:59.493 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 22960 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-14:51:59.496 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-14:52:22.145 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-14:52:22.294 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-14:52:22.512 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-14:52:27.037 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-14:52:35.343 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 36.332 seconds (process running for 39.327)
-14:52:38.502 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-14:52:38.508 [http-nio-8088-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-14:52:38.546 [http-nio-8088-exec-2] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-14:52:39.435 [http-nio-8088-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [150] milliseconds.
-14:53:09.346 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.account.AccountControllerGetMeTest]: AccountControllerGetMeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:53:09.578 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.account.AccountControllerGetMeTest
-14:53:10.344 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
-14:53:10.692 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-14:53:10.761 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Starting AccountControllerGetMeTest using Java 17.0.3 with PID 23772 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
-14:53:10.763 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - The following 1 profile is active: "test"
-14:53:19.112 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-14:53:19.218 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-14:53:19.282 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-14:53:21.916 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-14:53:26.617 [main] INFO  c.u.e.r.a.AccountControllerGetMeTest - Started AccountControllerGetMeTest in 16.291 seconds (process running for 19.03)
-14:53:28.569 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-14:53:28.571 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-14:53:28.596 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+00:53:54.568 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.category.CategoryControllerTest]: CategoryControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:53:54.912 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.category.CategoryControllerTest
+00:53:55.706 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.category.CategoryControllerTest$SaveParent]: SaveParent does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:53:55.713 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.category.CategoryControllerTest$SaveParent
+00:53:55.866 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+00:53:56.322 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+00:53:56.392 [main] INFO  c.u.e.r.c.CategoryControllerTest - Starting CategoryControllerTest using Java 17.0.3 with PID 3100 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+00:53:56.394 [main] INFO  c.u.e.r.c.CategoryControllerTest - The following 1 profile is active: "test"
+00:54:06.425 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+00:54:06.583 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+00:54:06.685 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+00:54:10.573 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+00:54:17.881 [main] INFO  c.u.e.r.c.CategoryControllerTest - Started CategoryControllerTest in 22.039 seconds (process running for 25.191)
+00:54:20.632 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+00:54:20.635 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+00:54:20.670 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+00:54:21.526 [http-nio-8088-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [109] milliseconds.
+00:54:22.148 [http-nio-8088-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.uc.ecommerce.model.dto.category.CategoryResponse com.uc.ecommerce.controller.category.CategoryController.saveParent(com.uc.ecommerce.model.dto.category.CreateCategoryRequest)]
+00:56:21.940 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.category.CategoryControllerTest]: CategoryControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:56:22.285 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.category.CategoryControllerTest
+00:56:23.085 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.category.CategoryControllerTest$SaveParent]: SaveParent does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:56:23.092 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.category.CategoryControllerTest$SaveParent
+00:56:23.233 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+00:56:23.630 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+00:56:23.746 [main] INFO  c.u.e.r.c.CategoryControllerTest - Starting CategoryControllerTest using Java 17.0.3 with PID 21692 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+00:56:23.747 [main] INFO  c.u.e.r.c.CategoryControllerTest - The following 1 profile is active: "test"
+00:56:32.750 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+00:56:32.858 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+00:56:32.927 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+00:56:36.348 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+00:56:41.906 [main] INFO  c.u.e.r.c.CategoryControllerTest - Started CategoryControllerTest in 18.692 seconds (process running for 21.755)
+00:56:44.222 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+00:56:44.225 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+00:56:44.257 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+00:56:45.436 [http-nio-8088-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.uc.ecommerce.model.dto.category.CategoryResponse com.uc.ecommerce.controller.category.CategoryController.saveParent(com.uc.ecommerce.model.dto.category.CreateCategoryRequest)]
+01:00:10.114 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.category.CategoryControllerTest]: CategoryControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:00:10.377 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.category.CategoryControllerTest
+01:00:11.265 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+01:00:11.657 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+01:00:11.736 [main] INFO  c.u.e.r.c.CategoryControllerTest - Starting CategoryControllerTest using Java 17.0.3 with PID 1796 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+01:00:11.737 [main] INFO  c.u.e.r.c.CategoryControllerTest - The following 1 profile is active: "test"
+01:00:20.340 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:00:20.455 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+01:00:20.526 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+01:00:24.065 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+01:00:30.087 [main] INFO  c.u.e.r.c.CategoryControllerTest - Started CategoryControllerTest in 18.843 seconds (process running for 21.843)
+01:00:32.454 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+01:00:32.457 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+01:00:32.486 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+01:02:45.116 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.category.CategoryControllerTest]: CategoryControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:02:45.361 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.category.CategoryControllerTest
+01:02:46.197 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+01:02:46.605 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+01:02:46.700 [main] INFO  c.u.e.r.c.CategoryControllerTest - Starting CategoryControllerTest using Java 17.0.3 with PID 9888 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+01:02:46.702 [main] INFO  c.u.e.r.c.CategoryControllerTest - The following 1 profile is active: "test"
+01:02:55.431 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:02:55.546 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+01:02:55.617 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+01:02:58.915 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+01:03:05.245 [main] INFO  c.u.e.r.c.CategoryControllerTest - Started CategoryControllerTest in 19.069 seconds (process running for 21.931)
+01:03:07.629 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+01:03:07.632 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+01:03:07.660 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+01:03:08.321 [http-nio-8088-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [101] milliseconds.
+01:07:09.682 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.uc.ecommerce.rest.category.CategoryControllerTest]: CategoryControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:07:09.943 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.uc.ecommerce.EcommerceApplication for test class com.uc.ecommerce.rest.category.CategoryControllerTest
+01:07:10.953 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+01:07:11.432 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+01:07:11.497 [main] INFO  c.u.e.r.c.CategoryControllerTest - Starting CategoryControllerTest using Java 17.0.3 with PID 13588 (started by HUDAI in C:\itg_hiring_challenge\e-commerce\e-commerce-monolith\backend)
+01:07:11.499 [main] INFO  c.u.e.r.c.CategoryControllerTest - The following 1 profile is active: "test"
+01:07:20.008 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:07:20.114 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+01:07:20.192 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+01:07:23.614 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+01:07:29.235 [main] INFO  c.u.e.r.c.CategoryControllerTest - Started CategoryControllerTest in 18.298 seconds (process running for 21.317)
+01:07:31.702 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+01:07:31.707 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+01:07:31.738 [http-nio-8088-exec-1] WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/v1/account/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
