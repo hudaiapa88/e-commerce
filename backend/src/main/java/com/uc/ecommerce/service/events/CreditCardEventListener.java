@@ -1,8 +1,8 @@
 package com.uc.ecommerce.service.events;
 
 import com.uc.ecommerce.model.dto.card.CreateCreditCardRequest;
-import com.uc.ecommerce.service.imp.CreditCardService;
-import com.uc.ecommerce.service.imp.UserService;
+import com.uc.ecommerce.service.abstracts.CreditCardService;
+import com.uc.ecommerce.service.abstracts.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

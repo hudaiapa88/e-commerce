@@ -5,8 +5,8 @@ import com.uc.ecommerce.core.i18n.Translator;
 import com.uc.ecommerce.model.entity.photo.Photo;
 import com.uc.ecommerce.model.entity.product.Product;
 import com.uc.ecommerce.repository.PhotoRepository;
-import com.uc.ecommerce.service.imp.PhotoService;
-import com.uc.ecommerce.service.imp.ProductService;
+import com.uc.ecommerce.service.abstracts.PhotoService;
+import com.uc.ecommerce.service.abstracts.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.engine.jdbc.BlobProxy;
@@ -50,7 +50,7 @@ public class PhotoManager implements PhotoService {
 
     @Transactional
     @Override
-    public void upload(Long productId, MultipartFile data) {
+    public void     upload(Long productId, MultipartFile data) {
         Product product = productService.findById(productId);
         Photo photo = new Photo();
         photo.setTitle(data.getOriginalFilename());

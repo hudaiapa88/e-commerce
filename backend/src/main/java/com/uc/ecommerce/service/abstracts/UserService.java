@@ -1,4 +1,4 @@
-package com.uc.ecommerce.service.imp;
+package com.uc.ecommerce.service.abstracts;
 
 import com.uc.ecommerce.model.dto.account.CreateUserRequest;
 import com.uc.ecommerce.model.dto.account.UpdateUserRequest;

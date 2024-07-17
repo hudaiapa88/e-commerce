@@ -1,7 +1,7 @@
 package com.uc.ecommerce.service;
 
 import com.uc.ecommerce.core.sender.EmailSender;
-import com.uc.ecommerce.service.imp.EmailService;
+import com.uc.ecommerce.service.abstracts.EmailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

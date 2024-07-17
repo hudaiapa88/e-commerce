@@ -4,7 +4,7 @@ import com.uc.ecommerce.core.security.annotation.OnlyAdmin;
 import com.uc.ecommerce.model.dto.product.ProductResponse;
 import com.uc.ecommerce.model.dto.product.CreateProductRequest;
 import com.uc.ecommerce.model.dto.product.UpdateProductRequest;
-import com.uc.ecommerce.service.imp.ProductService;
+import com.uc.ecommerce.service.abstracts.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;

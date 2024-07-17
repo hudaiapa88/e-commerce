@@ -1,4 +1,4 @@
-package com.uc.ecommerce.service.imp;
+package com.uc.ecommerce.service.abstracts;
 
 import com.uc.ecommerce.model.entity.photo.Photo;
 import org.springframework.web.multipart.MultipartFile;

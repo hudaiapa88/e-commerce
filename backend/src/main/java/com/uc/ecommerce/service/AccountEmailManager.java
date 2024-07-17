@@ -3,9 +3,7 @@ package com.uc.ecommerce.service;
 import com.uc.ecommerce.core.sender.EmailDetails;
 import com.uc.ecommerce.core.sender.EmailSender;
 import com.uc.ecommerce.model.entity.account.User;
-import com.uc.ecommerce.service.imp.AccountEmailService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
+import com.uc.ecommerce.service.abstracts.AccountEmailService;
 import org.springframework.stereotype.Service;
 
 @Service

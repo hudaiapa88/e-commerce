@@ -4,7 +4,7 @@ import com.uc.ecommerce.model.entity.account.Account;
 import com.uc.ecommerce.model.entity.log.AccountLog;
 import com.uc.ecommerce.model.enums.AccountLogType;
 import com.uc.ecommerce.repository.log.AccountLogRepository;
-import com.uc.ecommerce.service.imp.AccountLogService;
+import com.uc.ecommerce.service.abstracts.AccountLogService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

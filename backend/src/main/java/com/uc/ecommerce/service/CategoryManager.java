@@ -9,7 +9,7 @@ import com.uc.ecommerce.model.dto.category.UpdateCategoryRequest;
 import com.uc.ecommerce.model.entity.category.Category;
 import com.uc.ecommerce.model.mapper.CategoryResponseMapper;
 import com.uc.ecommerce.repository.CategoryRepository;
-import com.uc.ecommerce.service.imp.CategoryService;
+import com.uc.ecommerce.service.abstracts.CategoryService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

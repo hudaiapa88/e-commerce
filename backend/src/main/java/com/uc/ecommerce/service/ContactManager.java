@@ -3,9 +3,8 @@ package com.uc.ecommerce.service;
 import com.uc.ecommerce.core.security.SecurityContextUtil;
 import com.uc.ecommerce.model.dto.contract.ContactRequest;
 import com.uc.ecommerce.model.entity.account.User;
-import com.uc.ecommerce.service.imp.ContactEmailService;
-import com.uc.ecommerce.service.imp.ContactService;
-import io.swagger.v3.oas.annotations.servers.Server;
+import com.uc.ecommerce.service.abstracts.ContactEmailService;
+import com.uc.ecommerce.service.abstracts.ContactService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

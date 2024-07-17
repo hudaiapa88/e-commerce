@@ -4,7 +4,7 @@ import com.uc.ecommerce.core.security.annotation.OnlyAdmin;
 import com.uc.ecommerce.model.dto.account.CreateUserRequest;
 import com.uc.ecommerce.model.dto.account.UpdateUserRequest;
 import com.uc.ecommerce.model.dto.account.UserResponse;
-import com.uc.ecommerce.service.imp.UserService;
+import com.uc.ecommerce.service.abstracts.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

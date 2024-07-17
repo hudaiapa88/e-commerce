@@ -3,7 +3,7 @@ package com.uc.ecommerce.controller.card;
 import com.uc.ecommerce.model.dto.card.CreditCardResponse;
 import com.uc.ecommerce.model.dto.card.CreateCreditCardRequest;
 import com.uc.ecommerce.model.dto.card.UpdateCreditCardRequest;
-import com.uc.ecommerce.service.imp.CreditCardService;
+import com.uc.ecommerce.service.abstracts.CreditCardService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

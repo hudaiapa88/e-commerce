@@ -1,12 +1,9 @@
 package com.uc.ecommerce.core.validator;
 
-import com.uc.ecommerce.core.exception.validator.ValidatorException;
 import com.uc.ecommerce.model.entity.account.Account;
-import com.uc.ecommerce.model.entity.account.Admin;
 import com.uc.ecommerce.model.enums.AccountLogType;
-import com.uc.ecommerce.service.imp.AccountLogService;
+import com.uc.ecommerce.service.abstracts.AccountLogService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component

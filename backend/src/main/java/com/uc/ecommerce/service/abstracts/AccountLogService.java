@@ -1,10 +1,8 @@
-package com.uc.ecommerce.service.imp;
+package com.uc.ecommerce.service.abstracts;
 
 import com.uc.ecommerce.model.entity.account.Account;
-import com.uc.ecommerce.model.entity.account.User;
 import com.uc.ecommerce.model.entity.log.AccountLog;
 import com.uc.ecommerce.model.enums.AccountLogType;
-import jakarta.transaction.Transactional;
 
 import java.util.List;
 

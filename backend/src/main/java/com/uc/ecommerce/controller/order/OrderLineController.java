@@ -5,7 +5,7 @@ import com.uc.ecommerce.core.security.annotation.OnlyAdmin;
 import com.uc.ecommerce.model.dto.order.OrderLineResponse;
 import com.uc.ecommerce.model.dto.order.UpdateOrderLineRequest;
 import com.uc.ecommerce.model.dto.order.CreateOrderLineRequest;
-import com.uc.ecommerce.service.imp.OrderLineService;
+import com.uc.ecommerce.service.abstracts.OrderLineService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

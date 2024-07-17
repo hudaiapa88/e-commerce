@@ -2,7 +2,7 @@ package com.uc.ecommerce.service;
 
 import com.uc.ecommerce.core.exception.PaymentFailedException;
 import com.uc.ecommerce.model.entity.card.CreditCard;
-import com.uc.ecommerce.service.imp.BankService;
+import com.uc.ecommerce.service.abstracts.BankService;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

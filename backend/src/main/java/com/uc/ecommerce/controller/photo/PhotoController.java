@@ -2,7 +2,7 @@ package com.uc.ecommerce.controller.photo;
 
 import com.uc.ecommerce.core.security.annotation.IsAuthenticated;
 import com.uc.ecommerce.core.security.annotation.PermitAll;
-import com.uc.ecommerce.service.imp.PhotoService;
+import com.uc.ecommerce.service.abstracts.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;

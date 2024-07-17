@@ -15,8 +15,7 @@ public class JwtTokenUtil {
     public static String KEY_UPDATED = "uts";
     public static String KEY_ROLE = "role";
 
-    public String
-    generate(CustomAccountDetails customAccountDetails, boolean rememberMe) {
+    public String generate(CustomAccountDetails customAccountDetails, boolean rememberMe) {
 
         JwtToken.Builder builder = new JwtToken.Builder();
         builder.put(KEY_ID, customAccountDetails.getAccount().getId());

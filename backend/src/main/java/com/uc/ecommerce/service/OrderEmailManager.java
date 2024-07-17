@@ -3,7 +3,7 @@ package com.uc.ecommerce.service;
 import com.uc.ecommerce.core.sender.EmailDetails;
 import com.uc.ecommerce.core.sender.EmailSender;
 import com.uc.ecommerce.model.entity.account.User;
-import com.uc.ecommerce.service.imp.OrderEmailService;
+import com.uc.ecommerce.service.abstracts.OrderEmailService;
 import org.springframework.stereotype.Service;
 
 @Service

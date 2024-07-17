@@ -2,7 +2,7 @@ package com.uc.ecommerce.controller.contact;
 
 import com.uc.ecommerce.core.security.annotation.IsAuthenticated;
 import com.uc.ecommerce.model.dto.contract.ContactRequest;
-import com.uc.ecommerce.service.imp.ContactService;
+import com.uc.ecommerce.service.abstracts.ContactService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

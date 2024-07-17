@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @OpenAPIDefinition(
-
         info =@Info(
                 title = "E-commerce Rest Api",
 

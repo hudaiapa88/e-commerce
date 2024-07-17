@@ -2,63 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ee841dc-c006-4d86-8d37-f9f9083184ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/docker/docker-compose-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/PlatformTestWithAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docker/docker-compose-test.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docker/docker-compose-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/logs/archived/app.2023-06-07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/logs/archived/app.2023-06-08.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/logs/archived/app.2023-06-09.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/logs/archived/app.2023-06-10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/logs/archived/error.2023-06-07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/logs/archived/error.2023-06-08.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/logs/archived/error.2023-06-09.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/logs/archived/error.2023-06-10.log" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/utils/category/TestCategoryUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/logs/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/logs/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/uc/ecommerce/core/security/SecurityContextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/uc/ecommerce/core/security/SecurityContextUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/EcommerceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/PlatformTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/rest/ApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/rest/account/AccountControllerLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/rest/account/AccountControllerLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/utils/RandomUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/utils/RandomUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/utils/TestAccountUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/utils/TestAccountUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/RequestSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/rest/category/CategoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/uc/ecommerce/rest/category/CategoryControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/category/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/category/CategoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/order/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/order/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/order/OrderLineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/order/OrderLineController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/product/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/product/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/controller/user/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/core/security/SecurityContextUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/core/security/SecurityContextUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/dto/account/SaveUserRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/dto/category/SaveCategoryRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/dto/order/SaveOrderLineRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/dto/order/SaveOrderRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/dto/product/SaveProductRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/account/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/account/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/account/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/account/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/category/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/category/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/log/AccountLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/log/AccountLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/order/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/order/OrderLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/order/OrderLine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/product/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/model/entity/product/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/AccountLogManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/AccountLogManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/AccountManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/AccountManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/CategoryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/CategoryManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/CreditCardManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/CreditCardManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/OrderLineManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/OrderLineManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/OrderManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/OrderManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/ProductManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/ProductManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/UserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/UserManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/CategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/OrderLineService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/OrderLineService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/uc/ecommerce/service/imp/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/generated-sources/annotations/com/uc/ecommerce/model/mapper/CategoryResponseMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/generated-sources/annotations/com/uc/ecommerce/model/mapper/CategoryResponseMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/generated-sources/annotations/com/uc/ecommerce/model/mapper/CreditCardResponseMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/generated-sources/annotations/com/uc/ecommerce/model/mapper/CreditCardResponseMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/generated-sources/annotations/com/uc/ecommerce/model/mapper/OrderResponseMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/generated-sources/annotations/com/uc/ecommerce/model/mapper/OrderResponseMapperImpl.java" afterDir="false" />
@@ -76,6 +27,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="2WPHQN1T5Raw2D8FFGESLuhJfCt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -85,6 +40,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/itg_hiring_challenge/e-commerce/e-commerce-monolith/backend"
   }
 }]]></component>

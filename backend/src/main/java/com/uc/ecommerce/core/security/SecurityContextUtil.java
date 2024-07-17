@@ -43,9 +43,7 @@ public class SecurityContextUtil implements ApplicationContextAware {
         Authentication authentication = context.getAuthentication();
         CustomAccountDetails userDetails = (CustomAccountDetails) authentication.getPrincipal();
         if (userDetails.getRole() == Role.ADMIN) {
-
             return (Admin) userDetails.getAccount();
-
         } else {
             throw new UnauthorizedTransactionException("Yanlış ROL!!!!!");
         }

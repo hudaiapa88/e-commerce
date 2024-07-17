@@ -7,9 +7,9 @@ import com.uc.ecommerce.model.entity.order.Order;
 import com.uc.ecommerce.model.entity.order.OrderLine;
 import com.uc.ecommerce.model.entity.product.Product;
 import com.uc.ecommerce.repository.order.OrderLineRepository;
-import com.uc.ecommerce.service.imp.OrderLineService;
-import com.uc.ecommerce.service.imp.OrderService;
-import com.uc.ecommerce.service.imp.ProductService;
+import com.uc.ecommerce.service.abstracts.OrderLineService;
+import com.uc.ecommerce.service.abstracts.OrderService;
+import com.uc.ecommerce.service.abstracts.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Lazy;
@@ -17,7 +17,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 

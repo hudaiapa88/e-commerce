@@ -4,7 +4,7 @@ import com.uc.ecommerce.core.sender.EmailDetails;
 import com.uc.ecommerce.core.sender.EmailSender;
 import com.uc.ecommerce.model.dto.contract.ContactRequest;
 import com.uc.ecommerce.model.entity.account.User;
-import com.uc.ecommerce.service.imp.ContactEmailService;
+import com.uc.ecommerce.service.abstracts.ContactEmailService;
 import org.springframework.stereotype.Service;
 
 @Service

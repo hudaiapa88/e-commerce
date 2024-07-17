@@ -4,7 +4,7 @@ package com.uc.ecommerce.controller.account;
 import com.uc.ecommerce.core.security.SecurityContextUtil;
 import com.uc.ecommerce.core.security.annotation.IsAuthenticated;
 import com.uc.ecommerce.core.security.annotation.PermitAll;
-import com.uc.ecommerce.service.imp.AccountService;
+import com.uc.ecommerce.service.abstracts.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

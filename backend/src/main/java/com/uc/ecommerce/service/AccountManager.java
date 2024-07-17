@@ -13,17 +13,15 @@ import com.uc.ecommerce.core.security.SecurityContextUtil;
 import com.uc.ecommerce.core.validator.VerificationCodeValidator;
 import com.uc.ecommerce.core.validator.WrongEntryValidator;
 import com.uc.ecommerce.model.entity.account.Account;
-import com.uc.ecommerce.model.entity.account.Admin;
 import com.uc.ecommerce.model.entity.account.User;
 import com.uc.ecommerce.model.enums.AccountLogType;
 import com.uc.ecommerce.repository.AccountRepository;
-import com.uc.ecommerce.service.imp.AccountLogService;
-import com.uc.ecommerce.service.imp.AccountService;
+import com.uc.ecommerce.service.abstracts.AccountLogService;
+import com.uc.ecommerce.service.abstracts.AccountService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -33,8 +31,6 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 import static org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY;
 

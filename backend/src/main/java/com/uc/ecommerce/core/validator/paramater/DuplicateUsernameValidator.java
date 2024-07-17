@@ -1,6 +1,6 @@
 package com.uc.ecommerce.core.validator.paramater;
 
-import com.uc.ecommerce.service.imp.AccountService;
+import com.uc.ecommerce.service.abstracts.AccountService;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;

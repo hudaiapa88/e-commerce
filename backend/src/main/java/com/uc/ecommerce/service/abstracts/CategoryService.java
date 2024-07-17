@@ -1,4 +1,4 @@
-package com.uc.ecommerce.service.imp;
+package com.uc.ecommerce.service.abstracts;
 
 import com.uc.ecommerce.model.dto.category.CategoryResponse;
 import com.uc.ecommerce.model.dto.category.CreateCategoryRequest;
